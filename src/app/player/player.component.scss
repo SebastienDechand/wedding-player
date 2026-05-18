@@ -1,0 +1,502 @@
+// ============================================
+// RETRO LOFI MUSIC PLAYER - CSS
+// ============================================
+
+// CSS Variables for theming
+:host {
+  --primary-color: #d4a574;
+  --secondary-color: #8b6f47;
+  --text-color: #2c2c2c;
+  --light-bg: #f5f1ed;
+  --dark-accent: #1a1a1a;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.player-container {
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 0;
+  perspective: 1200px;
+}
+
+// ============================================
+// AMBIENT BACKGROUND SCENE
+// ============================================
+
+.ambient-scene {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 420px;
+  height: 320px;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+  border-radius: 0 0 20px 20px;
+}
+
+.sky {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, #2a2a3f 0%, #3d3d5c 50%, #4a4a6e 100%);
+}
+
+.window-scene {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #fff;
+  border-radius: 50%;
+  animation: twinkle 3s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+.star-1 { top: 20%; left: 15%; animation-delay: 0s; }
+.star-2 { top: 30%; right: 20%; animation-delay: 0.6s; }
+.star-3 { top: 15%; right: 10%; animation-delay: 1.2s; }
+.star-4 { top: 40%; left: 25%; animation-delay: 1.8s; }
+.star-5 { top: 25%; left: 45%; animation-delay: 2.4s; }
+
+.moon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  background: #f5f1e0;
+  border-radius: 50%;
+  top: 30px;
+  right: 40px;
+  box-shadow: 
+    -5px 5px 15px rgba(0, 0, 0, 0.4),
+    inset -8px -8px 12px rgba(0, 0, 0, 0.1);
+}
+
+.hills {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 80px;
+  background: 
+    radial-gradient(ellipse 200px 60px at 20% 100%, #2a2a3a),
+    radial-gradient(ellipse 180px 50px at 80% 100%, #3d3d4d);
+  opacity: 0.8;
+}
+
+.window-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+// ============================================
+// PLAYER BASE (3D PERSPECTIVE)
+// ============================================
+
+.vinyl-player {
+  position: relative;
+  margin-top: 320px;
+  background: linear-gradient(135deg, var(--light-bg) 0%, #ede9e6 100%);
+  border-radius: 0 0 20px 20px;
+  padding: 20px 24px 24px;
+  box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.player-base {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto 20px;
+  height: 240px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.player-top {
+  position: absolute;
+  width: 100%;
+  height: 180px;
+  background: linear-gradient(135deg, #8b7355 0%, #6b5344 100%);
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 
+    0 8px 20px rgba(0, 0, 0, 0.3),
+    inset 0 1px 2px rgba(255, 255, 255, 0.1),
+    inset -1px -1px 4px rgba(0, 0, 0, 0.3);
+  transform: rotateX(8deg);
+  transform-origin: bottom;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.player-side {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 180px;
+  background: #5a4033;
+  box-shadow: inset 1px 0 2px rgba(255, 255, 255, 0.1);
+  border-radius: 4px 0 0 4px;
+}
+
+.player-side-left {
+  left: 0;
+  border-left: 2px solid #3d2a1f;
+  transform: skewY(-2deg);
+}
+
+.player-side-right {
+  right: 0;
+  border-right: 2px solid #3d2a1f;
+  transform: skewY(2deg);
+}
+
+// ============================================
+// TURNTABLE
+// ============================================
+
+.turntable {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1;
+  max-width: 300px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.turntable-metal {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 35% 35%, #a0a0b8, #5a5a6e);
+  border-radius: 50%;
+  box-shadow: 
+    0 12px 24px rgba(0, 0, 0, 0.4),
+    inset -3px -3px 8px rgba(0, 0, 0, 0.5),
+    inset 2px 2px 4px rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+.turntable-base {
+  position: absolute;
+  width: 85%;
+  height: 85%;
+  background: radial-gradient(circle at 30% 30%, #3d3d5c, #1a1a2e);
+  border-radius: 50%;
+  box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+  z-index: 2;
+}
+
+.disc {
+  position: relative;
+  width: 75%;
+  height: 75%;
+  z-index: 3;
+  filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.4));
+}
+
+// ============================================
+// TONEARM
+// ============================================
+
+.tonearm-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+  pointer-events: none;
+}
+
+.tonearm {
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.3));
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+// ============================================
+// DECORATIVE ELEMENTS
+// ============================================
+
+.decoration {
+  position: absolute;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.deco-plant-left {
+  left: -30px;
+  bottom: 20px;
+  width: 50px;
+  height: 80px;
+  background: 
+    radial-gradient(ellipse 8px 15px at 50% 20%, #4a5a4a),
+    radial-gradient(ellipse 6px 12px at 35% 40%, #5a6a5a),
+    radial-gradient(ellipse 6px 12px at 65% 40%, #5a6a5a),
+    radial-gradient(ellipse 4px 8px at 50% 60%, #6a7a6a);
+  filter: drop-shadow(1px 2px 3px rgba(0, 0, 0, 0.2));
+}
+
+.deco-lamp {
+  right: -40px;
+  top: -20px;
+  width: 60px;
+  height: 70px;
+  background: linear-gradient(to bottom, #d4a574 0%, #d4a574 30%, #8b6f47 100%);
+  border-radius: 8px 8px 0 0;
+  box-shadow: 
+    inset -2px 0 4px rgba(0, 0, 0, 0.2),
+    2px 4px 8px rgba(0, 0, 0, 0.3);
+  
+  &::before {
+    content: "";
+    position: absolute;
+    top: -12px;
+    left: 5px;
+    right: 5px;
+    height: 12px;
+    background: #6b5344;
+    border-radius: 4px 4px 0 0;
+  }
+  
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 20px;
+    background: #4a3a2a;
+  }
+}
+
+// ============================================
+// TRACK INFO
+// ============================================
+
+.track-info {
+  text-align: center;
+  margin: 16px 0 12px;
+  min-height: 50px;
+}
+
+.track-status {
+  font-size: 10px;
+  color: #999;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: lowercase;
+  margin-bottom: 4px;
+}
+
+.track-title-container {
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 4px;
+}
+
+.track-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-color);
+  white-space: nowrap;
+  animation: none;
+  font-family: "Courier New", monospace;
+
+  &.scrolling {
+    animation: marquee 8s linear infinite;
+  }
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.track-artist {
+  margin: 0;
+  font-size: 11px;
+  color: #888;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+// ============================================
+// CONTROLS
+// ============================================
+
+.controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.control-btn {
+  width: 44px;
+  height: 44px;
+  border: 2px solid var(--primary-color);
+  border-radius: 4px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.8), rgba(240, 240, 240, 0.8));
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(245, 245, 245, 0.95));
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+.play-btn {
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  border-color: var(--secondary-color);
+  color: white;
+  font-size: 20px;
+  box-shadow: 0 4px 12px rgba(212, 165, 116, 0.3);
+
+  &:hover {
+    box-shadow: 0 6px 16px rgba(212, 165, 116, 0.4);
+  }
+}
+
+// ============================================
+// PROGRESS BAR
+// ============================================
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 12px 0;
+  font-size: 10px;
+  color: #888;
+  font-weight: 500;
+  font-family: monospace;
+}
+
+.time {
+  min-width: 32px;
+  text-align: center;
+}
+
+.progress-bar {
+  flex: 1;
+  height: 4px;
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.1));
+  border-radius: 2px;
+  cursor: pointer;
+  overflow: hidden;
+  transition: height 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    height: 6px;
+  }
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 2px;
+  transition: width 0.1s linear;
+  box-shadow: 0 0 6px rgba(212, 165, 116, 0.3);
+}
+
+// ============================================
+// PLAYLIST INDICATOR
+// ============================================
+
+.playlist-indicator {
+  text-align: center;
+  font-size: 10px;
+  color: #bbb;
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-top: 8px;
+  font-family: monospace;
+}
+
+// ============================================
+// RESPONSIVE DESIGN
+// ============================================
+
+@media (max-width: 480px) {
+  .vinyl-player {
+    padding: 16px;
+  }
+
+  .player-base {
+    height: 200px;
+  }
+
+  .player-top {
+    height: 150px;
+  }
+
+  .track-title {
+    font-size: 13px;
+  }
+
+  .control-btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+
+  .play-btn {
+    width: 46px;
+    height: 46px;
+    font-size: 18px;
+  }
+
+  .deco-lamp {
+    right: -30px;
+    width: 45px;
+    height: 55px;
+  }
+
+  .deco-plant-left {
+    left: -20px;
+    width: 35px;
+    height: 60px;
+  }
+}

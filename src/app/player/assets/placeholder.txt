@@ -1,0 +1,1 @@
+Placeholder assets folder. Replace with `disc.png`, `placeholder.mp3`, etc.

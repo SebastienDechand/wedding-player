@@ -1,0 +1,143 @@
+<div class="player-container">
+  <!-- Hidden audio element -->
+  <audio
+    #audio
+    [src]="currentTrack.url"
+    (timeupdate)="onTimeUpdate()"
+    (ended)="nextTrack()"
+  ></audio>
+
+  <!-- Ambient Background Scene -->
+  <div class="ambient-scene">
+    <!-- Sky gradient -->
+    <div class="sky"></div>
+    
+    <!-- Window with night scene -->
+    <div class="window-scene">
+      <!-- Stars scattered -->
+      <div class="star star-1"></div>
+      <div class="star star-2"></div>
+      <div class="star star-3"></div>
+      <div class="star star-4"></div>
+      <div class="star star-5"></div>
+      
+      <!-- Moon -->
+      <div class="moon"></div>
+      
+      <!-- Distant hills -->
+      <div class="hills"></div>
+    </div>
+    
+    <!-- Window frame -->
+    <svg class="window-frame" viewBox="0 0 320 240" preserveAspectRatio="none">
+      <rect x="8" y="8" width="304" height="224" fill="none" stroke="#1a1a2e" stroke-width="6"/>
+      <rect x="10" y="10" width="300" height="220" fill="none" stroke="#4a4a5e" stroke-width="1" opacity="0.3"/>
+      <line x1="160" y1="8" x2="160" y2="232" stroke="#1a1a2e" stroke-width="2" opacity="0.6"/>
+      <line x1="8" y1="120" x2="312" y2="120" stroke="#1a1a2e" stroke-width="2" opacity="0.6"/>
+    </svg>
+  </div>
+
+  <!-- Vinyl Player Visualization -->
+  <div class="vinyl-player">
+    <!-- Player wooden base -->
+    <div class="player-base">
+      <div class="player-top"></div>
+      <div class="player-side player-side-left"></div>
+      <div class="player-side player-side-right"></div>
+    </div>    <!-- Turntable -->
+    <div class="turntable">
+      <div class="turntable-metal"></div>
+      <div class="turntable-base"></div>
+
+      <!-- Spinning Disc -->
+      <svg
+        class="disc"
+        [style.transform]="'rotate(' + discRotation + 'deg)'"
+        viewBox="0 0 200 200"
+      >
+        <!-- Outer record -->
+        <circle cx="100" cy="100" r="95" fill="#0a0a0a" stroke="#1a1a1a" stroke-width="2"/>
+        
+        <!-- Grooves -->
+        <circle cx="100" cy="100" r="85" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.6"/>
+        <circle cx="100" cy="100" r="75" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.4"/>
+        <circle cx="100" cy="100" r="65" fill="none" stroke="#1a1a1a" stroke-width="1" opacity="0.2"/>
+        
+        <!-- Center label -->
+        <circle cx="100" cy="100" r="38" fill="#c9956f" stroke="#8b6f47" stroke-width="1"/>
+        <circle cx="100" cy="100" r="33" fill="#d4a574"/>
+        <text x="100" y="108" font-size="8" text-anchor="middle" fill="#3d3d5c" font-weight="bold" font-family="monospace">SIDE A</text>
+        
+        <!-- Center spindle -->
+        <circle cx="100" cy="100" r="10" fill="#2a2a3a"/>
+        <circle cx="100" cy="100" r="7" fill="#1a1a2e"/>
+      </svg>
+
+      <!-- Tonearm -->
+      <div class="tonearm-container">
+        <svg
+          class="tonearm"
+          [style.transform]="'rotate(' + tonearmAngle + 'deg)'"
+          viewBox="0 0 200 200"
+        >
+          <!-- Tonearm base/pivot -->
+          <circle cx="100" cy="100" r="8" fill="#4a4a5e"/>
+          <circle cx="100" cy="100" r="6" fill="#6a6a7e"/>
+          
+          <!-- Arm rod -->
+          <line x1="100" y1="100" x2="100" y2="20" stroke="#5a5a6e" stroke-width="4" stroke-linecap="round"/>
+          
+          <!-- Cartridge -->
+          <rect x="92" y="8" width="16" height="18" fill="#6a6a7e" rx="2"/>
+          <rect x="94" y="10" width="12" height="14" fill="#8a8a9e" rx="1"/>
+          
+          <!-- Stylus -->
+          <circle cx="100" cy="26" r="5" fill="#a0a0b8"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Decorative left plant -->
+    <div class="decoration deco-plant-left"></div>
+    
+    <!-- Decorative lamp -->
+    <div class="decoration deco-lamp"></div>
+
+    <!-- Track Info -->
+    <div class="track-info">
+      <div class="track-status">now playing</div>
+      <div class="track-title-container">
+        <h2 class="track-title" [class.scrolling]="currentTrack.title.length > 25">
+          {{ currentTrack.title }}
+        </h2>
+      </div>
+      <p class="track-artist">{{ currentTrack.artist }}</p>
+    </div>
+
+    <!-- Controls -->
+    <div class="controls">
+      <button class="control-btn prev-btn" (click)="previousTrack()" aria-label="Previous track">⏮</button>
+      <button class="control-btn play-btn" (click)="togglePlay()" [class.playing]="playing" aria-label="Play/Pause">
+        {{ playing ? "⏸" : "▶" }}
+      </button>
+      <button class="control-btn next-btn" (click)="nextTrack()" aria-label="Next track">⏭</button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div class="progress-container">
+      <span class="time">{{ formatTime(currentTime) }}</span>
+      <div class="progress-bar" (click)="seekTo($event.offsetX / $event.currentTarget.offsetWidth)">
+        <div class="progress-fill" [style.width.%]="progressPercent"></div>
+      </div>
+      <span class="time">{{ formatTime(duration) }}</span>
+    </div>
+
+    <!-- Playlist Indicator -->
+    <div class="playlist-indicator">
+      <span class="track-number">{{ currentTrackIndex + 1 }} / {{ playlist.length }}</span>
+    </div>
+
+    <!-- Theme Selector -->
+    <app-theme-selector></app-theme-selector>
+  </div>
+</div>
