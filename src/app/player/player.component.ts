@@ -6,6 +6,7 @@ import {
   ViewChild,
   inject,
   signal,
+  computed,
 } from "@angular/core";
 import { Subject } from "rxjs";
 import { ThemeService } from "../services/theme.service";
@@ -16,6 +17,13 @@ import {
   UI_CONSTANTS,
 } from "../constants";
 import type { Track } from "../models";
+
+interface ConfettiPiece {
+  x: number;
+  delay: number;
+  color: string;
+  duration: number;
+}
 
 @Component({
   selector: "app-player",
@@ -30,24 +38,52 @@ export class PlayerComponent implements OnInit, OnDestroy {
   private themeService = inject(ThemeService);
   currentTheme = this.themeService.currentTheme;
 
-  // Reactive state using Angular signals
   playing = signal(false);
   currentTime = signal<number>(0);
   duration = signal<number>(0);
   currentTrackIndex = signal<number>(0);
 
-  // Animation state
   tonearmAngle = signal<number>(ANIMATION_CONSTANTS.TONEARM_RESTING_ANGLE);
   discRotation = signal<number>(0);
 
-  // Playlist
   playlist = signal<Track[]>(DEFAULT_PLAYLIST);
   showTracklist = signal(false);
   volume = signal(80);
 
+  // Easter eggs
+  eggElfActive = signal(false);
+  eggCrossActive = signal(false);
+  eggMotoActive = signal(false);
+  eggRingsActive = signal(false);
+  eggFoxActive = signal(false);
+  eggCalendarActive = signal(false);
+  eggCatActive = signal<string | null>(null);
+  confettiPieces = signal<ConfettiPiece[]>([]);
+  vinylColor = signal<"default" | "white" | "pink">("default");
+  calendarYear = signal(2026);
+
+  vinylCenterColor = computed(() => {
+    if (this.vinylColor() === "white") return "#f5f5f0";
+    if (this.vinylColor() === "pink") return "#ff69b4";
+    return "#3a82b8";
+  });
+
+  vinylInnerColor = computed(() => {
+    if (this.vinylColor() === "white") return "#e8e8e0";
+    if (this.vinylColor() === "pink") return "#d44fa0";
+    return "#2060a0";
+  });
+
+  readonly elfParticles = Array.from({ length: 8 }, (_, i) => ({
+    id: i,
+    x: 22 + i * 1.1,
+    delay: i * 0.18,
+  }));
+
   private destroy$ = new Subject<void>();
   private animationFrameId: number | null = null;
   private tonearmVelocity = 0;
+  private eggTimers: ReturnType<typeof setTimeout>[] = [];
 
   ngOnInit() {
     this.currentTime.set(0);
@@ -57,9 +93,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.destroy$.next();
     this.destroy$.complete();
-    if (this.animationFrameId) {
-      cancelAnimationFrame(this.animationFrameId);
-    }
+    if (this.animationFrameId) cancelAnimationFrame(this.animationFrameId);
+    this.eggTimers.forEach(clearTimeout);
   }
 
   private startAnimationLoop() {
@@ -70,8 +105,10 @@ export class PlayerComponent implements OnInit, OnDestroy {
       const target = this.playing()
         ? ANIMATION_CONSTANTS.TONEARM_PLAYING_ANGLE
         : ANIMATION_CONSTANTS.TONEARM_RESTING_ANGLE;
-      const force = (target - this.tonearmAngle()) * ANIMATION_CONSTANTS.TONEARM_SPRING;
-      this.tonearmVelocity = this.tonearmVelocity * ANIMATION_CONSTANTS.TONEARM_DAMPING + force;
+      const force =
+        (target - this.tonearmAngle()) * ANIMATION_CONSTANTS.TONEARM_SPRING;
+      this.tonearmVelocity =
+        this.tonearmVelocity * ANIMATION_CONSTANTS.TONEARM_DAMPING + force;
       this.tonearmAngle.set(this.tonearmAngle() + this.tonearmVelocity);
       this.animationFrameId = requestAnimationFrame(animate);
     };
@@ -126,9 +163,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
     const audio = this.audioRef.nativeElement;
     audio.src = this.playlist()[this.currentTrackIndex()].url;
     audio.load();
-    if (this.playing()) {
-      audio.play();
-    }
+    if (this.playing()) audio.play();
   }
 
   setVolume(event: Event) {
@@ -156,5 +191,115 @@ export class PlayerComponent implements OnInit, OnDestroy {
     const mins = Math.floor(seconds / 60);
     const secs = Math.floor(seconds % 60);
     return `${mins}:${secs.toString().padStart(2, "0")}`;
+  }
+
+  // ── Easter eggs ──
+
+  triggerElfEgg() {
+    if (this.eggElfActive()) return;
+    this.eggElfActive.set(true);
+    this.eggTimers.push(
+      setTimeout(() => this.eggElfActive.set(false), 4000)
+    );
+  }
+
+  triggerCrossEgg() {
+    if (this.eggCrossActive()) return;
+    this.eggCrossActive.set(true);
+    this.eggTimers.push(
+      setTimeout(() => this.eggCrossActive.set(false), 2000)
+    );
+  }
+
+  triggerMotoEgg() {
+    this.eggMotoActive.set(true);
+  }
+
+  closeMotoEgg() {
+    this.eggMotoActive.set(false);
+  }
+
+  triggerRingsEgg() {
+    if (this.eggRingsActive()) return;
+    this.eggRingsActive.set(true);
+    this.vinylColor.set("white");
+    this.confettiPieces.set(
+      this.makeConfetti(["#ffd700", "#ff69b4", "#fff", "#f0e68c", "#87ceeb", "#ff6b6b"])
+    );
+    this.eggTimers.push(
+      setTimeout(() => {
+        this.eggRingsActive.set(false);
+        this.vinylColor.set("default");
+        this.confettiPieces.set([]);
+      }, 5000)
+    );
+  }
+
+  triggerFoxEgg() {
+    if (this.eggFoxActive()) return;
+    this.eggFoxActive.set(true);
+    this.vinylColor.set("pink");
+    this.confettiPieces.set(
+      this.makeConfetti(["#ff69b4", "#ffb6c1", "#ff1493", "#ffc0cb", "#c879d4", "#ffaadd"])
+    );
+    this.eggTimers.push(
+      setTimeout(() => {
+        this.eggFoxActive.set(false);
+        this.vinylColor.set("default");
+        this.confettiPieces.set([]);
+      }, 5000)
+    );
+  }
+
+  triggerCatEgg(cat: string) {
+    this.eggCatActive.set(cat);
+    this.eggTimers.push(setTimeout(() => this.eggCatActive.set(null), 2000));
+  }
+
+  rollClickCount = signal(0);
+
+  triggerRollEgg() {
+    const count = this.rollClickCount() + 1;
+    this.rollClickCount.set(count);
+
+    if (count >= 3) {
+      this.eggCatActive.set('roll-big');
+      this.rollClickCount.set(0);
+      this.eggTimers.push(setTimeout(() => {
+        if (this.eggCatActive() === 'roll-big') this.eggCatActive.set(null);
+      }, 1200));
+    } else {
+      this.eggCatActive.set('roll');
+      this.eggTimers.push(setTimeout(() => {
+        if (this.eggCatActive() === 'roll') this.eggCatActive.set(null);
+      }, 500));
+    }
+  }
+
+  triggerCalendarEgg() {
+    if (this.eggCalendarActive()) return;
+    this.eggCalendarActive.set(true);
+    let year = 2026;
+    this.calendarYear.set(year);
+    const iv = setInterval(() => {
+      year--;
+      this.calendarYear.set(year);
+      if (year <= 2019) clearInterval(iv);
+    }, 350);
+    this.eggTimers.push(
+      setTimeout(() => {
+        this.eggCalendarActive.set(false);
+        this.calendarYear.set(2026);
+      }, 4000)
+    );
+  }
+
+  private makeConfetti(colors: string[]): ConfettiPiece[] {
+    return Array.from({ length: 35 }, () => ({
+      x: Math.random() * 100,
+      delay: Math.random() * 2,
+      color: colors[Math.floor(Math.random() * colors.length)],
+      duration: 2 + Math.random() * 2,
+    }));
   }
 }
