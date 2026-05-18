@@ -1,24 +1,35 @@
+// Default theme vars (Art Déco) — overridden at runtime by ThemeService
 :root {
-  --bg: #5a5a7e;
-  --accent: #d4a574;
-  --text: #2c2c2c;
+  --color-bg: #0a0808;
+  --color-surface: #181410;
+  --color-title-bar: #221c14;
+  --color-border: #a08428;
+  --color-primary: #d4a830;
+  --color-secondary: #a07818;
+  --color-text: #faf2de;
+  --color-muted: #c0a060;
+  --color-accent: #50c8b8;
+  --color-glow: rgba(212, 168, 48, 0.3);
+  --scene-sky: #060404;
+  --scene-ground: #100c08;
 }
 
 * {
   box-sizing: border-box;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: 100%;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Courier New", monospace;
-  background: linear-gradient(135deg, #5a5a7e 0%, #4a4a6e 100%);
-  color: var(--text);
-  line-height: 1.5;
+  font-family: 'Courier New', Courier, monospace;
+  background: #050404;
+  color: var(--color-text);
+  min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -28,6 +39,5 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 16px;
-  background: linear-gradient(135deg, #5a5a7e 0%, #4a4a6e 100%);
+  padding: 24px 16px;
 }

@@ -1,0 +1,13 @@
+<div class="theme-selector">
+  @for (theme of themes(); track theme.name) {
+    <button
+      class="theme-swatch"
+      [class.active]="theme.name === currentTheme().name"
+      (click)="selectTheme(theme.name)"
+      [title]="theme.label + ' — ' + theme.description"
+      [style.--sw-color]="theme.colorPrimary"
+      [style.--sw-border]="theme.colorBorder"
+      [attr.aria-label]="theme.label"
+    ></button>
+  }
+</div>

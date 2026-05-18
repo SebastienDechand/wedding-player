@@ -1,21 +1,26 @@
-import { Component, OnInit, OnDestroy, ElementRef, ViewChild, inject } from "@angular/core";
-import { CommonModule } from "@angular/common";
-import { Subject, interval, takeUntil } from "rxjs";
+import {
+  Component,
+  OnInit,
+  OnDestroy,
+  ElementRef,
+  ViewChild,
+  inject,
+  signal,
+} from "@angular/core";
+import { Subject } from "rxjs";
 import { ThemeService } from "../services/theme.service";
-import { ThemeSelectorComponent } from "../components/theme-selector.component";
-
-interface Track {
-  id: number;
-  title: string;
-  artist: string;
-  url: string;
-  duration: number;
-}
+import { ThemeSelectorComponent } from "../components/theme-selector/theme-selector.component";
+import {
+  DEFAULT_PLAYLIST,
+  ANIMATION_CONSTANTS,
+  UI_CONSTANTS,
+} from "../constants";
+import type { Track } from "../models";
 
 @Component({
   selector: "app-player",
   standalone: true,
-  imports: [CommonModule, ThemeSelectorComponent],
+  imports: [ThemeSelectorComponent],
   templateUrl: "./player.component.html",
   styleUrls: ["./player.component.scss"],
 })
@@ -25,47 +30,27 @@ export class PlayerComponent implements OnInit, OnDestroy {
   private themeService = inject(ThemeService);
   currentTheme = this.themeService.currentTheme;
 
-  // Playback state
-  playing = false;
-  currentTime = 0;
-  duration = 0;
-  currentTrackIndex = 0;
+  // Reactive state using Angular signals
+  playing = signal(false);
+  currentTime = signal<number>(0);
+  duration = signal<number>(0);
+  currentTrackIndex = signal<number>(0);
 
   // Animation state
-  tonearmAngle = -15; // Resting position
-  discRotation = 0;
+  tonearmAngle = signal<number>(ANIMATION_CONSTANTS.TONEARM_RESTING_ANGLE);
+  discRotation = signal<number>(0);
 
   // Playlist
-  playlist: Track[] = [
-    {
-      id: 1,
-      title: "First Dance",
-      artist: "Our Song",
-      url: "assets/placeholder.mp3",
-      duration: 0,
-    },
-    {
-      id: 2,
-      title: "Seven Years Together",
-      artist: "Love Story",
-      url: "assets/placeholder.mp3",
-      duration: 0,
-    },
-    {
-      id: 3,
-      title: "Forever Yours",
-      artist: "Wedding Gift",
-      url: "assets/placeholder.mp3",
-      duration: 0,
-    },
-  ];
+  playlist = signal<Track[]>(DEFAULT_PLAYLIST);
+  showTracklist = signal(false);
+  volume = signal(80);
 
   private destroy$ = new Subject<void>();
   private animationFrameId: number | null = null;
+  private tonearmVelocity = 0;
 
   ngOnInit() {
-    this.currentTime = 0;
-    // Simulate animation frame for smooth disc rotation
+    this.currentTime.set(0);
     this.startAnimationLoop();
   }
 
@@ -79,15 +64,15 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   private startAnimationLoop() {
     const animate = () => {
-      if (this.playing) {
-        // Spinning disc: 1 rotation per 3 seconds = 120 RPM (romantic, slow)
-        this.discRotation = (this.discRotation + 2) % 360;
-        // Tonearm follows play state: 0° when playing, -15° when paused
-        this.tonearmAngle += (0 - this.tonearmAngle) * 0.1; // Smooth transition
-      } else {
-        // Return to resting position
-        this.tonearmAngle += (-15 - this.tonearmAngle) * 0.1;
+      if (this.playing()) {
+        this.discRotation.set((this.discRotation() + 2) % 360);
       }
+      const target = this.playing()
+        ? ANIMATION_CONSTANTS.TONEARM_PLAYING_ANGLE
+        : ANIMATION_CONSTANTS.TONEARM_RESTING_ANGLE;
+      const force = (target - this.tonearmAngle()) * ANIMATION_CONSTANTS.TONEARM_SPRING;
+      this.tonearmVelocity = this.tonearmVelocity * ANIMATION_CONSTANTS.TONEARM_DAMPING + force;
+      this.tonearmAngle.set(this.tonearmAngle() + this.tonearmVelocity);
       this.animationFrameId = requestAnimationFrame(animate);
     };
     animate();
@@ -95,19 +80,19 @@ export class PlayerComponent implements OnInit, OnDestroy {
 
   togglePlay() {
     const audio = this.audioRef.nativeElement;
-    if (!this.playing) {
+    if (!this.playing()) {
       audio.play();
-      this.playing = true;
+      this.playing.set(true);
     } else {
       audio.pause();
-      this.playing = false;
+      this.playing.set(false);
     }
   }
 
   onTimeUpdate() {
     const audio = this.audioRef.nativeElement;
-    this.currentTime = audio.currentTime;
-    this.duration = audio.duration || 0;
+    this.currentTime.set(audio.currentTime);
+    this.duration.set(audio.duration || 0);
   }
 
   seekTo(percent: number) {
@@ -116,31 +101,54 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   nextTrack() {
-    this.currentTrackIndex = (this.currentTrackIndex + 1) % this.playlist.length;
+    const newIndex = (this.currentTrackIndex() + 1) % this.playlist().length;
+    this.currentTrackIndex.set(newIndex);
     this.loadTrack();
   }
 
   previousTrack() {
-    this.currentTrackIndex =
-      (this.currentTrackIndex - 1 + this.playlist.length) % this.playlist.length;
+    const newIndex =
+      (this.currentTrackIndex() - 1 + this.playlist().length) %
+      this.playlist().length;
+    this.currentTrackIndex.set(newIndex);
     this.loadTrack();
+  }
+
+  selectTrack(index: number) {
+    this.currentTrackIndex.set(index);
+    const audio = this.audioRef.nativeElement;
+    audio.src = this.playlist()[index].url;
+    audio.load();
+    if (this.playing()) audio.play();
   }
 
   private loadTrack() {
     const audio = this.audioRef.nativeElement;
-    audio.src = this.playlist[this.currentTrackIndex].url;
+    audio.src = this.playlist()[this.currentTrackIndex()].url;
     audio.load();
-    if (this.playing) {
+    if (this.playing()) {
       audio.play();
     }
   }
 
+  setVolume(event: Event) {
+    const val = +(event.target as HTMLInputElement).value;
+    this.volume.set(val);
+    this.audioRef.nativeElement.volume = val / 100;
+  }
+
   get currentTrack(): Track {
-    return this.playlist[this.currentTrackIndex];
+    return this.playlist()[this.currentTrackIndex()];
   }
 
   get progressPercent(): number {
-    return this.duration > 0 ? (this.currentTime / this.duration) * 100 : 0;
+    return this.duration() > 0
+      ? (this.currentTime() / this.duration()) * 100
+      : 0;
+  }
+
+  shouldShowMarquee(): boolean {
+    return this.currentTrack.title.length > UI_CONSTANTS.MARQUEE_THRESHOLD;
   }
 
   formatTime(seconds: number): string {
