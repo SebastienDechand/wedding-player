@@ -7,7 +7,8 @@
         [style.font-size.px]="p.size"
         [style.animation-delay]="p.delay + 's'"
         [style.animation-duration]="p.dur + 's'"
-      >{{ p.emoji }}</span>
+        >{{ p.emoji }}</span
+      >
     }
   </div>
 }
@@ -16,6 +17,6 @@
   <span class="cozy-leaf">🌿</span>
   <span class="cozy-fire" [class.lit]="active()">🔥</span>
   <span class="cozy-label" [class.active]="active()">cozy mode</span>
-  <span class="cozy-moon">🌙</span>
+  <span class="cozy-fire" [class.lit]="active()">🔥</span>
   <span class="cozy-leaf">🌿</span>
 </div>

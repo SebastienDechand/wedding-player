@@ -16,8 +16,8 @@
         (click)="showTracklist.set(!showTracklist())"
         [title]="showTracklist() ? 'Platine' : 'Playlist'"
       >≡</button>
-      <span class="tbtn">□</span>
-      <span class="tbtn">×</span>
+      <button class="tbtn" (click)="minimizeWindow()">□</button>
+      <button class="tbtn" (click)="closeWindow()">×</button>
     </div>
   </div>
 

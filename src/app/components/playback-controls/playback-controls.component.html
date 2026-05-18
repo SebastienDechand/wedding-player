@@ -1,13 +1,13 @@
 <div class="controls">
   <div class="btn-group">
-    <button class="ctrl-btn" (click)="playlist.previous()" aria-label="Previous">⏮</button>
+    <button class="ctrl-btn" (click)="playlist.previous()" aria-label="Previous">|◀</button>
     <button
       class="ctrl-btn ctrl-play"
       (click)="audio.togglePlay()"
       [class.playing]="audio.playing()"
       aria-label="Play/Pause"
-    >{{ audio.playing() ? '⏸' : '▶' }}</button>
-    <button class="ctrl-btn" (click)="playlist.next()" aria-label="Next">⏭</button>
+    >{{ audio.playing() ? '■' : '▶' }}</button>
+    <button class="ctrl-btn" (click)="playlist.next()" aria-label="Next">▶|</button>
   </div>
 
   <div class="volume-wrap">

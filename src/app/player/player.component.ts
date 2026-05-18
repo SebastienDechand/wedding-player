@@ -25,6 +25,14 @@ export class PlayerComponent implements OnDestroy {
   protected readonly eggs = inject(EasterEggsService);
 protected readonly showTracklist = signal(false);
 
+  protected minimizeWindow(): void {
+    (window as any).playerBridge?.minimize();
+  }
+
+  protected closeWindow(): void {
+    window.close();
+  }
+
   ngOnDestroy(): void {
     this.eggs.destroy();
   }

@@ -4,4 +4,5 @@ export interface Track {
   artist: string;
   url: string;
   duration: number;
+  cover?: string;
 }

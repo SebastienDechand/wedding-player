@@ -2,12 +2,27 @@
   "name": "wedding-player",
   "version": "0.1.0",
   "private": true,
+  "main": "electron/main.js",
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
-    "electron:serve": "npm run build && electron .",
-    "electron:build": "electron-builder",
-    "cap:sync": "npx cap sync"
+    "electron:dev": "ng build --configuration=development && node electron/start-electron.js",
+    "electron:build": "ng build && electron-builder"
+  },
+  "build": {
+    "appId": "com.sebastien.wedding-player",
+    "productName": "Wedding Player",
+    "directories": {
+      "output": "release"
+    },
+    "files": [
+      "electron/**/*",
+      "dist/wedding-player/browser/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": [{ "target": "nsis", "arch": ["x64"] }]
+    }
   },
   "dependencies": {
     "@angular/animations": "^20.0.0",

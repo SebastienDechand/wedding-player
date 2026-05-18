@@ -23,11 +23,12 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
+  overflow: hidden;
 }
 
 body {
-  font-family: 'Courier New', Courier, monospace;
-  background: #050404;
+  font-family: "Courier New", Courier, monospace;
+  background: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
@@ -39,5 +40,4 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  padding: 24px 16px;
 }

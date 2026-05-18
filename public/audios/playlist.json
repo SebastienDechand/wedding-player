@@ -1,0 +1,137 @@
+{
+  "playlist": [
+    {
+      "id": 1,
+      "title": "Unsainted",
+      "artist": "Slipknot",
+      "url": "",
+      "duration": "4:21"
+    },
+    {
+      "id": 2,
+      "title": "Gipsy",
+      "artist": "Fleetwood Mac",
+      "url": "",
+      "duration": "4:24"
+    },
+    {
+      "id": 3,
+      "title": "Jaded",
+      "artist": "Soil",
+      "url": "",
+      "duration": "2:37"
+    },
+    {
+      "id": 4,
+      "title": "Never Too Late",
+      "artist": "Three Days Grace",
+      "url": "",
+      "duration": "3:29"
+    },
+    {
+      "id": 5,
+      "title": "Simple Man - Live",
+      "artist": "Lynyrd Skynyrd",
+      "url": "",
+      "duration": "8:30"
+    },
+    {
+      "id": 6,
+      "title": "Iris",
+      "artist": "Goo Goo Dolls",
+      "url": "",
+      "duration": "4:49"
+    },
+    {
+      "id": 7,
+      "title": "Last to Know",
+      "artist": "Three Days Grace",
+      "url": "",
+      "duration": "3:27"
+    },
+    {
+      "id": 8,
+      "title": "tolerate it",
+      "artist": "Taylor Swift",
+      "url": "",
+      "duration": "4:05"
+    },
+    {
+      "id": 9,
+      "title": "2:00",
+      "artist": "SCH, Damso",
+      "url": "",
+      "duration": "3:17"
+    },
+    {
+      "id": 10,
+      "title": "Jusqu'au dernier gramme",
+      "artist": "PNL",
+      "url": "",
+      "duration": "5:53"
+    },
+    {
+      "id": 11,
+      "title": "We Got the Moves",
+      "artist": "Electric Callboy",
+      "url": "",
+      "duration": "3:26"
+    },
+    {
+      "id": 12,
+      "title": "Dreams",
+      "artist": "Fleetwood Mac",
+      "url": "",
+      "duration": "4:14"
+    },
+    {
+      "id": 13,
+      "title": "Je t'aimais, je t'aime, je t'aimerai",
+      "artist": "Franis Cabrel",
+      "url": "",
+      "duration": "4:36"
+    },
+    {
+      "id": 14,
+      "title": "S.O.S. d'un terrien en détresse",
+      "artist": "Daniel Balavoine",
+      "url": "",
+      "duration": "3:06"
+    },
+    {
+      "id": 15,
+      "title": "Je t'aime",
+      "artist": "Michel Polnareff",
+      "url": "",
+      "duration": "4:44"
+    },
+    {
+      "id": 16,
+      "title": "The Sound of Silence",
+      "artist": "Disturbed",
+      "url": "",
+      "duration": "4:08"
+    },
+    {
+      "id": 17,
+      "title": "Wicked Game - Acoustic; Live",
+      "artist": "Stone Sour",
+      "url": "",
+      "duration": "4:27"
+    },
+    {
+      "id": 18,
+      "title": "Si jamais j'oublie",
+      "artist": "Zaz",
+      "url": "",
+      "duration": "3:29"
+    },
+    {
+      "id": 19,
+      "title": "Secret",
+      "artist": "Louane",
+      "url": "",
+      "duration": "3:11"
+    }
+  ]
+}
