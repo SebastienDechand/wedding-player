@@ -1,0 +1,28 @@
+<img class="tt-fond" src="assets/fond.png" alt="" draggable="false" />
+<img class="tt-base" src="assets/tourne_disque.png" alt="" draggable="false" />
+<svg
+  class="tt-vinyl"
+  viewBox="0 0 200 200"
+  xmlns="http://www.w3.org/2000/svg"
+  [style.transform]="
+    'perspective(500px) rotateX(55deg) rotateZ(' + discRotation() + 'deg)'
+  "
+>
+  <circle cx="100" cy="100" r="98" fill="#060606" />
+  <circle cx="100" cy="100" r="100" fill="none" stroke="#141414" stroke-width="2.5" />
+  <circle cx="100" cy="100" r="74" fill="none" stroke="#141414" stroke-width="2" />
+  <circle cx="100" cy="100" r="60" fill="none" stroke="#141414" stroke-width="1.8" />
+  <circle cx="100" cy="100" r="45" fill="none" stroke="#141414" stroke-width="1.5" />
+  <circle cx="100" cy="100" r="29" [attr.fill]="eggs.vinylCenterColor()" />
+  <circle cx="100" cy="100" r="22" [attr.fill]="eggs.vinylInnerColor()" />
+  <circle cx="108" cy="100" r="4" fill="rgba(255,255,255,0.2)" />
+  <circle cx="100" cy="100" r="4.5" fill="#040404" />
+</svg>
+<img
+  class="tt-arm"
+  src="assets/bras_lecture.png"
+  [style.transform]="'rotate(' + tonearmAngle() + 'deg)'"
+  alt=""
+  draggable="false"
+/>
+<app-easter-eggs />

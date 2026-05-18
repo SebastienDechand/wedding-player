@@ -1,0 +1,23 @@
+<div class="controls">
+  <button class="ctrl-btn" (click)="playlist.previous()" aria-label="Previous">⏮</button>
+  <button
+    class="ctrl-btn ctrl-play"
+    (click)="audio.togglePlay()"
+    [class.playing]="audio.playing()"
+    aria-label="Play/Pause"
+  >{{ audio.playing() ? '⏸' : '▶' }}</button>
+  <button class="ctrl-btn" (click)="playlist.next()" aria-label="Next">⏭</button>
+
+  <div class="volume-wrap">
+    <span class="vol-icon">♪</span>
+    <input
+      class="volume-slider"
+      type="range"
+      min="0"
+      max="100"
+      [value]="audio.volume()"
+      (input)="audio.setVolume(+$any($event.target).value)"
+      aria-label="Volume"
+    />
+  </div>
+</div>

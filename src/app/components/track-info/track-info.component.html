@@ -1,0 +1,20 @@
+<div class="track-info">
+  <div class="now-playing-row">
+    <span class="heart-deco">♥</span>
+    <span class="now-playing-label">now playing...</span>
+    <span class="heart-deco">♥</span>
+  </div>
+  <div class="track-detail-row">
+    <div class="album-thumb">
+      <span class="album-note">♪</span>
+    </div>
+    <div class="track-meta">
+      <div class="track-title-clip">
+        <h2 class="track-title" [class.scrolling]="shouldShowMarquee()">
+          {{ playlist.currentTrack().title }}
+        </h2>
+      </div>
+      <p class="track-artist">{{ playlist.currentTrack().artist }}</p>
+    </div>
+  </div>
+</div>

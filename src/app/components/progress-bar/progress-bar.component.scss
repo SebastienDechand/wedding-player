@@ -1,0 +1,31 @@
+.progress-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--color-bg);
+}
+
+.time-label {
+  font-size: 11px;
+  color: var(--color-muted);
+  min-width: 32px;
+  text-align: center;
+  font-family: "Courier New", Courier, monospace;
+}
+
+.progress-track {
+  flex: 1;
+  height: 6px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: var(--color-primary);
+  box-shadow: 0 0 5px var(--color-glow);
+  transition: width 0.1s linear;
+}

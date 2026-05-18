@@ -1,11 +1,4 @@
-<div class="player-window" [class.egg-cross-shake]="eggCrossActive()">
-  <audio
-    #audio
-    [src]="currentTrack.url"
-    (timeupdate)="onTimeUpdate()"
-    (ended)="nextTrack()"
-  ></audio>
-
+<div class="player-window" [class.egg-cross-shake]="eggs.eggCrossActive()">
   <!-- Pixel corner ornaments -->
   <span class="co co-tl"></span>
   <span class="co co-tr"></span>
@@ -22,289 +15,30 @@
         [class.active]="showTracklist()"
         (click)="showTracklist.set(!showTracklist())"
         [title]="showTracklist() ? 'Platine' : 'Playlist'"
-      >
-        ≡
-      </button>
+      >≡</button>
       <span class="tbtn">□</span>
       <span class="tbtn">×</span>
     </div>
   </div>
 
-  <!-- Scene OR Tracklist -->
   @if (showTracklist()) {
-    <div class="tracklist">
-      <div class="tl-header">
-        <span class="heart-deco">♥</span>
-        <span>playlist</span>
-        <span class="heart-deco">♥</span>
-      </div>
-      @for (track of playlist(); track track.id; let i = $index) {
-        <button
-          class="tl-item"
-          [class.tl-active]="i === currentTrackIndex()"
-          (click)="selectTrack(i)"
-        >
-          <span class="tl-num">{{ (i + 1).toString().padStart(2, "0") }}</span>
-          <div class="tl-meta">
-            <span class="tl-title">{{ track.title }}</span>
-            <span class="tl-artist">{{ track.artist }}</span>
-          </div>
-          <span class="tl-dur">{{ formatTime(track.duration) }}</span>
-        </button>
-      }
-    </div>
+    <app-tracklist />
   } @else {
     <div class="scene">
-      <div class="tt-stage">
-        <img class="tt-fond" src="assets/fond.png" alt="" draggable="false" />
-        <img
-          class="tt-base"
-          src="assets/tourne_disque.png"
-          alt=""
-          draggable="false"
-        />
-        <!-- SVG vinyl with dynamic center color for eggs 4 & 5 -->
-        <svg
-          class="tt-vinyl"
-          viewBox="0 0 200 200"
-          xmlns="http://www.w3.org/2000/svg"
-          [style.transform]="
-            'perspective(500px) rotateX(55deg) rotateZ(' +
-            discRotation() +
-            'deg)'
-          "
-        >
-          <circle cx="100" cy="100" r="98" fill="#060606" />
-          <circle cx="100" cy="100" r="100" fill="none" stroke="#141414" stroke-width="2.5" />
-          <circle cx="100" cy="100" r="74" fill="none" stroke="#141414" stroke-width="2" />
-          <circle cx="100" cy="100" r="60" fill="none" stroke="#141414" stroke-width="1.8" />
-          <circle cx="100" cy="100" r="45" fill="none" stroke="#141414" stroke-width="1.5" />
-          <circle cx="100" cy="100" r="29" [attr.fill]="vinylCenterColor()" />
-          <circle cx="100" cy="100" r="22" [attr.fill]="vinylInnerColor()" />
-          <circle cx="108" cy="100" r="4" fill="rgba(255,255,255,0.2)" />
-          <circle cx="100" cy="100" r="4.5" fill="#040404" />
-        </svg>
-        <img
-          class="tt-arm"
-          src="assets/bras_lecture.png"
-          [style.transform]="'rotate(' + tonearmAngle() + 'deg)'"
-          alt=""
-          draggable="false"
-        />
-
-        <!-- ── Easter egg items ── -->
-
-        <!-- Egg 1: Elfette de sang (WoW) -->
-        <img
-          class="egg egg-elf"
-          [class.active]="eggElfActive()"
-          src="assets/elf.png"
-          alt=""
-          draggable="false"
-          (click)="triggerElfEgg()"
-        />
-
-        <!-- Egg 2: Croix Conjuring -->
-        <img
-          class="egg egg-cross"
-          [class.active]="eggCrossActive()"
-          src="assets/cross.png"
-          alt=""
-          draggable="false"
-          (click)="triggerCrossEgg()"
-        />
-
-        <!-- Egg 3: Harley (Coline) -->
-        <img
-          class="egg egg-moto"
-          src="assets/moto.png"
-          alt=""
-          draggable="false"
-          (click)="triggerMotoEgg()"
-        />
-
-        <!-- Egg 4: Bagues (mariage) — visibles uniquement pendant le grand bounce de Roll -->
-        <img
-          class="egg egg-rings"
-          [class.rings-hidden]="eggCatActive() !== 'roll-big'"
-          [class.revealed]="eggCatActive() === 'roll-big'"
-          src="assets/rings.png"
-          alt=""
-          draggable="false"
-          (click)="triggerRingsEgg()"
-        />
-
-        <!-- Egg 5: Renard (Louise) -->
-        <img
-          class="egg egg-fox"
-          src="assets/fox.png"
-          alt=""
-          draggable="false"
-          (click)="triggerFoxEgg()"
-        />
-
-        <!-- Egg 6: Les 3 chats -->
-        <img
-          class="egg egg-cat egg-cinna"
-          [class.active]="eggCatActive() === 'cinna'"
-          src="assets/cinna.png"
-          alt=""
-          draggable="false"
-          (click)="triggerCatEgg('cinna')"
-        />
-        <img
-          class="egg egg-cat egg-moon"
-          [class.active]="eggCatActive() === 'moon'"
-          src="assets/moon.png"
-          alt=""
-          draggable="false"
-          (click)="triggerCatEgg('moon')"
-        />
-        <img
-          class="egg egg-cat egg-roll"
-          [class.active]="eggCatActive() === 'roll'"
-          [class.big-bounce]="eggCatActive() === 'roll-big'"
-          src="assets/roll.png"
-          alt=""
-          draggable="false"
-          (click)="triggerRollEgg()"
-        />
-
-        <!-- Egg 7: Calendrier (Jour 1) -->
-        <img
-          class="egg egg-calendar"
-          src="assets/calendar.png"
-          alt=""
-          draggable="false"
-          (click)="triggerCalendarEgg()"
-        />
-
-        <!-- ── Effects ── -->
-
-        <!-- Egg 1: aura rouge + particules dorées -->
-        @if (eggElfActive()) {
-          <div class="egg-elf-aura"></div>
-          @for (p of elfParticles; track p.id) {
-            <div
-              class="egg-particle"
-              [style.right.%]="p.x"
-              [style.animation-delay]="p.delay + 's'"
-            ></div>
-          }
-        }
-
-        <!-- Egg 2: overlay rouge -->
-        @if (eggCrossActive()) {
-          <div class="egg-cross-overlay"></div>
-        }
-
-        <!-- Eggs 4 & 5: confettis -->
-        @if (confettiPieces().length) {
-          <div class="confetti-overlay">
-            @for (p of confettiPieces(); track $index) {
-              <div
-                class="confetti-piece"
-                [style.left.%]="p.x"
-                [style.background]="p.color"
-                [style.animation-delay]="p.delay + 's'"
-                [style.animation-duration]="p.duration + 's'"
-              ></div>
-            }
-          </div>
-        }
-
-        <!-- Egg 4: texte mariage -->
-        @if (eggRingsActive()) {
-          <div class="egg-overlay-text egg-text-rings">30.05.2026 ♡</div>
-        }
-
-        <!-- Egg 5: texte Louise -->
-        @if (eggFoxActive()) {
-          <div class="egg-overlay-text egg-text-fox">Louise ♡ 12.01.2025</div>
-        }
-
-        <!-- Egg 7: overlay calendrier sepia + décompte -->
-        @if (eggCalendarActive()) {
-          <div class="egg-calendar-overlay">
-            <div class="egg-calendar-year">{{ calendarYear() }}</div>
-            @if (calendarYear() <= 2019) {
-              <div class="egg-calendar-label">Jour 1 ♡ 16.02.2019</div>
-            }
-          </div>
-        }
-      </div>
+      <app-vinyl-stage />
     </div>
   }
 
-  <!-- Track info -->
-  <div class="track-info">
-    <div class="now-playing-row">
-      <span class="heart-deco">♥</span>
-      <span class="now-playing-label">now playing...</span>
-      <span class="heart-deco">♥</span>
-    </div>
-    <div class="track-detail-row">
-      <div class="album-thumb">
-        <span class="album-note">♪</span>
-      </div>
-      <div class="track-meta">
-        <div class="track-title-clip">
-          <h2 class="track-title" [class.scrolling]="shouldShowMarquee()">
-            {{ currentTrack.title }}
-          </h2>
-        </div>
-        <p class="track-artist">{{ currentTrack.artist }}</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Playback controls + volume -->
-  <div class="controls">
-    <button class="ctrl-btn" (click)="previousTrack()" aria-label="Previous">
-      ⏮
-    </button>
-    <button
-      class="ctrl-btn ctrl-play"
-      (click)="togglePlay()"
-      [class.playing]="playing()"
-      aria-label="Play/Pause"
-    >
-      {{ playing() ? "⏸" : "▶" }}
-    </button>
-    <button class="ctrl-btn" (click)="nextTrack()" aria-label="Next">⏭</button>
-
-    <div class="volume-wrap">
-      <span class="vol-icon">♪</span>
-      <input
-        class="volume-slider"
-        type="range"
-        min="0"
-        max="100"
-        [value]="volume()"
-        (input)="setVolume($event)"
-        aria-label="Volume"
-      />
-    </div>
-  </div>
-
-  <!-- Progress bar -->
-  <div class="progress-row">
-    <span class="time-label">{{ formatTime(currentTime()) }}</span>
-    <div
-      class="progress-track"
-      (click)="seekTo($event.offsetX / $event.currentTarget.offsetWidth)"
-    >
-      <div class="progress-fill" [style.width.%]="progressPercent"></div>
-    </div>
-    <span class="time-label">{{ formatTime(duration()) }}</span>
-  </div>
+  <app-track-info />
+  <app-playback-controls />
+  <app-progress-bar />
 
   <!-- Bottom bar -->
   <div class="bottom-bar">
     <span class="heart-deco">♥</span>
-    <span class="track-counter"
-      >{{ currentTrackIndex() + 1 }} / {{ playlist().length }}</span
-    >
+    <span class="track-counter">
+      {{ playlist.currentTrackIndex() + 1 }} / {{ playlist.playlist().length }}
+    </span>
     <span class="heart-deco">♥</span>
   </div>
 
@@ -312,10 +46,10 @@
   <app-theme-selector></app-theme-selector>
 
   <!-- Egg 3: popup plaque Harley (Coline) -->
-  @if (eggMotoActive()) {
-    <div class="egg-moto-backdrop" (click)="closeMotoEgg()">
+  @if (eggs.eggMotoActive()) {
+    <div class="egg-moto-backdrop" (click)="eggs.closeMotoEgg()">
       <div class="egg-moto-plate" (click)="$event.stopPropagation()">
-        <button class="egg-moto-close" (click)="closeMotoEgg()">×</button>
+        <button class="egg-moto-close" (click)="eggs.closeMotoEgg()">×</button>
         <div class="egg-plate-side">
           <div class="egg-plate-stars">★★★<br/>★&nbsp;★<br/>★★★</div>
           <div class="egg-plate-country">F</div>

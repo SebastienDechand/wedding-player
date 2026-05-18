@@ -1,0 +1,21 @@
+<div class="tracklist">
+  <div class="tl-header">
+    <span class="heart-deco">♥</span>
+    <span>playlist</span>
+    <span class="heart-deco">♥</span>
+  </div>
+  @for (track of playlist.playlist(); track track.id; let i = $index) {
+    <button
+      class="tl-item"
+      [class.tl-active]="i === playlist.currentTrackIndex()"
+      (click)="playlist.selectTrack(i)"
+    >
+      <span class="tl-num">{{ (i + 1).toString().padStart(2, '0') }}</span>
+      <div class="tl-meta">
+        <span class="tl-title">{{ track.title }}</span>
+        <span class="tl-artist">{{ track.artist }}</span>
+      </div>
+      <span class="tl-dur">{{ audio.formatTime(track.duration) }}</span>
+    </button>
+  }
+</div>

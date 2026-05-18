@@ -1,0 +1,140 @@
+<!-- ── Egg items ── -->
+
+<!-- Egg 1: Elfette de sang (WoW) -->
+<img
+  class="egg egg-elf"
+  [class.active]="eggs.eggElfActive()"
+  src="assets/elf.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerElfEgg()"
+/>
+
+<!-- Egg 2: Croix Conjuring -->
+<img
+  class="egg egg-cross"
+  [class.active]="eggs.eggCrossActive()"
+  src="assets/cross.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerCrossEgg()"
+/>
+
+<!-- Egg 3: Harley (Coline) -->
+<img
+  class="egg egg-moto"
+  src="assets/moto.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerMotoEgg()"
+/>
+
+<!-- Egg 4: Bagues (mariage) — visibles pendant le grand bounce de Roll -->
+<img
+  class="egg egg-rings"
+  [class.rings-hidden]="eggs.eggCatActive() !== 'roll-big'"
+  [class.revealed]="eggs.eggCatActive() === 'roll-big'"
+  src="assets/rings.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerRingsEgg()"
+/>
+
+<!-- Egg 5: Renard (Louise) — caché derrière le tourne-disque -->
+<img
+  class="egg egg-fox"
+  src="assets/fox.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerFoxEgg()"
+/>
+
+<!-- Egg 6: Les 3 chats -->
+<img
+  class="egg egg-cat egg-cinna"
+  [class.active]="eggs.eggCatActive() === 'cinna'"
+  src="assets/cinna.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerCatEgg('cinna')"
+/>
+<img
+  class="egg egg-cat egg-moon"
+  [class.active]="eggs.eggCatActive() === 'moon'"
+  src="assets/moon.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerCatEgg('moon')"
+/>
+<img
+  class="egg egg-cat egg-roll"
+  [class.active]="eggs.eggCatActive() === 'roll'"
+  [class.big-bounce]="eggs.eggCatActive() === 'roll-big'"
+  src="assets/roll.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerRollEgg()"
+/>
+
+<!-- Egg 7: Calendrier (Jour 1) -->
+<img
+  class="egg egg-calendar"
+  src="assets/calendar.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerCalendarEgg()"
+/>
+
+<!-- ── Effects ── -->
+
+<!-- Egg 1: aura rouge + particules dorées -->
+@if (eggs.eggElfActive()) {
+  <div class="egg-elf-aura"></div>
+  @for (p of elfParticles; track p.id) {
+    <div
+      class="egg-particle"
+      [style.right.%]="p.x"
+      [style.animation-delay]="p.delay + 's'"
+    ></div>
+  }
+}
+
+<!-- Egg 2: overlay rouge (shake géré sur .player-window) -->
+@if (eggs.eggCrossActive()) {
+  <div class="egg-cross-overlay"></div>
+}
+
+<!-- Eggs 4 & 5: confettis -->
+@if (eggs.confettiPieces().length) {
+  <div class="confetti-overlay">
+    @for (p of eggs.confettiPieces(); track $index) {
+      <div
+        class="confetti-piece"
+        [style.left.%]="p.x"
+        [style.background]="p.color"
+        [style.animation-delay]="p.delay + 's'"
+        [style.animation-duration]="p.duration + 's'"
+      ></div>
+    }
+  </div>
+}
+
+<!-- Egg 4: banderole mariage -->
+@if (eggs.eggRingsActive()) {
+  <div class="egg-overlay-text egg-text-rings">30.05.2026 ♡</div>
+}
+
+<!-- Egg 5: banderole Louise -->
+@if (eggs.eggFoxActive()) {
+  <div class="egg-overlay-text egg-text-fox">Louise ♡ 12.01.2025</div>
+}
+
+<!-- Egg 7: overlay calendrier sepia + décompte -->
+@if (eggs.eggCalendarActive()) {
+  <div class="egg-calendar-overlay">
+    <div class="egg-calendar-year">{{ eggs.calendarYear() }}</div>
+    @if (eggs.calendarYear() <= 2019) {
+      <div class="egg-calendar-label">Jour 1 ♡ 16.02.2019</div>
+    }
+  </div>
+}

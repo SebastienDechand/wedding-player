@@ -1,0 +1,418 @@
+// Host fills the .tt-stage entirely
+:host {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+// ---- Base egg item ----
+
+.egg {
+  position: absolute;
+  cursor: pointer;
+  pointer-events: auto;
+  transition:
+    transform 0.12s ease,
+    filter 0.12s ease;
+  z-index: 5;
+
+  &:hover {
+    transform: scale(1.05);
+    filter: brightness(1.08);
+  }
+}
+
+// ---- Positions in scene ----
+
+.egg-elf {
+  width: 11%;
+  right: 21%;
+  top: 22%;
+
+  &.active {
+    animation: egg-pulse-glow 0.55s ease-in-out infinite;
+  }
+}
+
+.egg-cross {
+  width: 7.5%;
+  right: 0.5%;
+  top: 6%;
+  transition: transform 0.4s ease;
+
+  &.active {
+    transform: rotate(180deg) !important;
+  }
+}
+
+.egg-moto {
+  width: 20%;
+  left: 15%;
+  bottom: 3%;
+}
+
+.egg-rings {
+  width: 9%;
+  right: 15%;
+  bottom: 10%;
+  z-index: 1;
+  transition: opacity 0.3s ease;
+
+  &.rings-hidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  &.revealed {
+    opacity: 1;
+    pointer-events: auto;
+    z-index: 7;
+    animation: egg-rings-reveal 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+}
+
+.egg-fox {
+  width: 20%;
+  left: 0%;
+  bottom: 28%;
+  transform: rotate(-45deg);
+  z-index: 1;
+
+  &:hover {
+    transform: rotate(-45deg) scale(1.12);
+  }
+}
+
+.egg-cat {
+  width: 15%;
+
+  &.active {
+    animation: egg-bounce 0.45s ease forwards;
+  }
+}
+
+.egg-cinna {
+  right: 10%;
+  bottom: 18%;
+}
+
+.egg-moon {
+  right: 2%;
+  bottom: 18%;
+}
+
+.egg-roll {
+  width: 30%;
+  right: 5%;
+  bottom: 5%;
+
+  &.active {
+    animation: egg-bounce 0.45s ease forwards;
+  }
+
+  &.big-bounce {
+    animation: egg-big-bounce 3s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  }
+}
+
+.egg-calendar {
+  width: 20%;
+  left: 18%;
+  top: 5%;
+}
+
+// ---- Egg 1: aura + particules ----
+
+.egg-elf-aura {
+  position: absolute;
+  width: 14%;
+  aspect-ratio: 1;
+  right: 20%;
+  top: 20%;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(200, 20, 40, 0.65) 0%,
+    transparent 70%
+  );
+  animation: egg-aura-pulse 0.55s ease-in-out infinite alternate;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.egg-particle {
+  position: absolute;
+  top: 22%;
+  width: 5px;
+  height: 5px;
+  background: #ffd700;
+  border-radius: 50%;
+  box-shadow: 0 0 4px #ffd700;
+  animation: egg-particle-rise 0.9s ease-out infinite;
+  z-index: 7;
+  pointer-events: none;
+}
+
+// ---- Egg 2: overlay rouge ----
+
+.egg-cross-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(160, 0, 0, 0.35);
+  animation: egg-fade-out 2s ease forwards;
+  z-index: 11;
+  pointer-events: none;
+}
+
+// ---- Eggs 4 & 5: confettis ----
+
+.confetti-overlay {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.confetti-piece {
+  position: absolute;
+  top: -8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 1px;
+  animation: confetti-fall linear forwards;
+}
+
+// ---- Banderoles (eggs 4 & 5) ----
+
+.egg-overlay-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 18%;
+  padding: 10px 0;
+  text-align: center;
+  font-size: 14px;
+  font-family: "Courier New", monospace;
+  font-weight: bold;
+  white-space: nowrap;
+  letter-spacing: 2px;
+  z-index: 12;
+  pointer-events: none;
+  animation: egg-banner-in 0.45s cubic-bezier(0.34, 1.2, 0.64, 1) forwards;
+}
+
+.egg-text-rings {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(8, 4, 24, 0.9) 12%,
+    rgba(8, 4, 24, 0.9) 88%,
+    transparent 100%
+  );
+  border-top: 1px solid rgba(255, 215, 0, 0.45);
+  border-bottom: 1px solid rgba(255, 215, 0, 0.45);
+  color: #ffd700;
+  text-shadow:
+    0 0 10px #ffd700,
+    0 0 28px rgba(255, 215, 0, 0.55);
+}
+
+.egg-text-fox {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(30, 4, 22, 0.9) 12%,
+    rgba(30, 4, 22, 0.9) 88%,
+    transparent 100%
+  );
+  border-top: 1px solid rgba(255, 105, 180, 0.45);
+  border-bottom: 1px solid rgba(255, 105, 180, 0.45);
+  color: #ff69b4;
+  text-shadow:
+    0 0 10px #ff69b4,
+    0 0 28px rgba(255, 105, 180, 0.55);
+}
+
+// ---- Egg 7: overlay calendrier ----
+
+.egg-calendar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(120, 80, 20, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  z-index: 12;
+  pointer-events: none;
+}
+
+.egg-calendar-year {
+  font-size: 40px;
+  font-weight: bold;
+  color: #fff3d0;
+  font-family: "Courier New", monospace;
+  text-shadow:
+    2px 2px 0 rgba(80, 40, 0, 0.7),
+    0 0 12px rgba(255, 200, 80, 0.5);
+  animation: egg-year-pop 0.3s ease;
+}
+
+.egg-calendar-label {
+  font-size: 11px;
+  color: #fff3d0;
+  font-family: "Courier New", monospace;
+  letter-spacing: 1px;
+  text-shadow: 1px 1px 0 rgba(80, 40, 0, 0.8);
+  animation: egg-text-in-center 0.5s ease forwards;
+}
+
+// ================================================
+// KEYFRAMES
+// ================================================
+
+@keyframes egg-banner-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes egg-pulse-glow {
+  0%,
+  100% {
+    filter: brightness(1) drop-shadow(0 0 0 transparent);
+  }
+  50% {
+    filter: brightness(1.25) drop-shadow(0 0 7px #dc143c);
+  }
+}
+
+@keyframes egg-aura-pulse {
+  from {
+    opacity: 0.3;
+    transform: scale(0.85);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+}
+
+@keyframes egg-particle-rise {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-36px) scale(0.4);
+  }
+}
+
+@keyframes egg-bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  35% {
+    transform: translateY(-8px) scale(1.12);
+  }
+  65% {
+    transform: translateY(3px) scale(0.94);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes egg-big-bounce {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  35% {
+    transform: translateY(-90px) scale(1.12);
+  }
+  65% {
+    transform: translateY(3px) scale(0.94);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes confetti-fall {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(320px) rotate(680deg);
+    opacity: 0;
+  }
+}
+
+@keyframes egg-text-in-center {
+  from {
+    opacity: 0;
+    transform: scale(0.7);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes egg-rings-reveal {
+  0% {
+    transform: scale(0.5) rotate(-15deg);
+    opacity: 0;
+  }
+  60% {
+    transform: scale(1.2) rotate(5deg);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes egg-year-pop {
+  from {
+    opacity: 0;
+    transform: scale(1.6);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes egg-shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
+}
+
+@keyframes egg-fade-out {
+  0%,
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
