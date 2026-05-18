@@ -33,17 +33,7 @@
   <app-playback-controls />
   <app-progress-bar />
 
-  <!-- Bottom bar -->
-  <div class="bottom-bar">
-    <span class="heart-deco">♥</span>
-    <span class="track-counter">
-      {{ playlist.currentTrackIndex() + 1 }} / {{ playlist.playlist().length }}
-    </span>
-    <span class="heart-deco">♥</span>
-  </div>
-
-  <!-- Theme selector -->
-  <app-theme-selector></app-theme-selector>
+  <app-cozy-mode />
 
   <!-- Egg 3: popup plaque Harley (Coline) -->
   @if (eggs.eggMotoActive()) {

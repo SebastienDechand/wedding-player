@@ -12,6 +12,6 @@ export class TrackInfoComponent {
   protected readonly playlist = inject(PlaylistService);
 
   protected shouldShowMarquee(): boolean {
-    return this.playlist.currentTrack().title.length > UI_CONSTANTS.MARQUEE_THRESHOLD;
+    return true;
   }
 }

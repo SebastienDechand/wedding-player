@@ -1,7 +1,6 @@
 import { Component, inject, signal, OnDestroy } from '@angular/core';
 import { EasterEggsService } from '../services/easter-eggs.service';
-import { PlaylistService } from '../services/playlist.service';
-import { ThemeSelectorComponent } from '../components/theme-selector/theme-selector.component';
+import { CozyModeComponent } from '../components/cozy-mode/cozy-mode.component';
 import { VinylStageComponent } from '../components/vinyl-stage/vinyl-stage.component';
 import { TracklistComponent } from '../components/tracklist/tracklist.component';
 import { TrackInfoComponent } from '../components/track-info/track-info.component';
@@ -12,7 +11,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar.co
   selector: 'app-player',
   standalone: true,
   imports: [
-    ThemeSelectorComponent,
+    CozyModeComponent,
     VinylStageComponent,
     TracklistComponent,
     TrackInfoComponent,
@@ -24,8 +23,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar.co
 })
 export class PlayerComponent implements OnDestroy {
   protected readonly eggs = inject(EasterEggsService);
-  protected readonly playlist = inject(PlaylistService);
-  protected readonly showTracklist = signal(false);
+protected readonly showTracklist = signal(false);
 
   ngOnDestroy(): void {
     this.eggs.destroy();

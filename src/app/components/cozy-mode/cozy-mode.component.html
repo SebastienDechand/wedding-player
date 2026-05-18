@@ -1,0 +1,21 @@
+@if (active()) {
+  <div class="cozy-overlay">
+    @for (p of particles; track p.id) {
+      <span
+        class="cozy-ember"
+        [style.left.%]="p.x"
+        [style.font-size.px]="p.size"
+        [style.animation-delay]="p.delay + 's'"
+        [style.animation-duration]="p.dur + 's'"
+      >{{ p.emoji }}</span>
+    }
+  </div>
+}
+
+<div class="cozy-bar" (click)="toggle()">
+  <span class="cozy-leaf">🌿</span>
+  <span class="cozy-fire" [class.lit]="active()">🔥</span>
+  <span class="cozy-label" [class.active]="active()">cozy mode</span>
+  <span class="cozy-moon">🌙</span>
+  <span class="cozy-leaf">🌿</span>
+</div>

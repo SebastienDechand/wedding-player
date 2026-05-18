@@ -19,7 +19,6 @@
   border: 2px solid var(--color-border);
   outline: 1px solid var(--color-border);
   outline-offset: 3px;
-  box-shadow: 5px 5px 0 var(--color-border);
   font-family: "Courier New", Courier, monospace;
   user-select: none;
   position: relative;
@@ -31,14 +30,26 @@
   position: absolute;
   width: 7px;
   height: 7px;
-  background: var(--color-accent);
+  background: var(--color-border);
   z-index: 20;
   pointer-events: none;
 }
-.co-tl { top: -4px; left: -4px; }
-.co-tr { top: -4px; right: -4px; }
-.co-bl { bottom: -4px; left: -4px; }
-.co-br { bottom: -4px; right: -4px; }
+.co-tl {
+  top: -4px;
+  left: -4px;
+}
+.co-tr {
+  top: -4px;
+  right: -4px;
+}
+.co-bl {
+  bottom: -4px;
+  left: -4px;
+}
+.co-br {
+  bottom: -4px;
+  right: -4px;
+}
 
 // ---- TITLE BAR ----
 
@@ -54,7 +65,7 @@
 }
 
 .title-heart {
-  color: var(--color-accent);
+  color: var(--color-primary);
   font-size: 11px;
   line-height: 1;
 }
@@ -110,30 +121,6 @@ button.tbtn {
   overflow: hidden;
   border-bottom: 2px solid var(--color-border);
   position: relative;
-}
-
-// ---- BOTTOM BAR ----
-
-.bottom-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 5px 14px;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
-}
-
-.heart-deco {
-  color: var(--color-accent);
-  font-size: 12px;
-  line-height: 1;
-}
-
-.track-counter {
-  font-size: 11px;
-  color: var(--color-muted);
-  letter-spacing: 1px;
-  font-family: "Courier New", Courier, monospace;
 }
 
 // ================================================
@@ -252,17 +239,34 @@ button.tbtn {
 // ================================================
 
 @keyframes egg-shake {
-  0%, 100% { transform: translateX(0); }
-  20%       { transform: translateX(-4px); }
-  60%       { transform: translateX(4px); }
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20% {
+    transform: translateX(-4px);
+  }
+  60% {
+    transform: translateX(4px);
+  }
 }
 
 @keyframes egg-fade-in-bg {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 @keyframes egg-plate-pop {
-  from { transform: scale(0.6); opacity: 0; }
-  to   { transform: scale(1);   opacity: 1; }
+  from {
+    transform: scale(0.6);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

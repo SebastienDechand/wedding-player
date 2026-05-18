@@ -5,6 +5,7 @@
     (click)="audio.seekTo($event.offsetX / $any($event.currentTarget).offsetWidth)"
   >
     <div class="progress-fill" [style.width.%]="audio.progressPercent()"></div>
+    <span class="progress-pip" [style.left.%]="audio.progressPercent()">🔥</span>
   </div>
   <span class="time-label">{{ audio.formatTime(audio.duration()) }}</span>
 </div>
