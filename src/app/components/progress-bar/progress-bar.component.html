@@ -1,11 +1,16 @@
+<canvas #vizCanvas class="viz-canvas" height="28"></canvas>
 <div class="progress-row">
   <span class="time-label">{{ audio.formatTime(audio.currentTime()) }}</span>
   <div
     class="progress-track"
-    (click)="audio.seekTo($event.offsetX / $any($event.currentTarget).offsetWidth)"
+    (click)="
+      audio.seekTo($event.offsetX / $any($event.currentTarget).offsetWidth)
+    "
   >
     <div class="progress-fill" [style.width.%]="audio.progressPercent()"></div>
-    <span class="progress-pip" [style.left.%]="audio.progressPercent()">🔥</span>
+    <span class="progress-pip" [style.left.%]="audio.progressPercent()"
+      >{{ pip() }}</span
+    >
   </div>
   <span class="time-label">{{ audio.formatTime(audio.duration()) }}</span>
 </div>

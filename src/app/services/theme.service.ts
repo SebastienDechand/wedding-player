@@ -4,7 +4,7 @@ import type { Theme, ThemeName } from '../models';
 
 @Injectable({ providedIn: 'root' })
 export class ThemeService {
-  private currentThemeSignal = signal<Theme>(THEMES['art-deco']);
+  private currentThemeSignal = signal<Theme>(THEMES['chalet']);
 
   readonly currentTheme = this.currentThemeSignal.asReadonly();
   readonly allThemes = computed((): Theme[] => Object.values(THEMES) as Theme[]);
@@ -23,7 +23,7 @@ export class ThemeService {
 
   private loadTheme(): void {
     const savedTheme = localStorage.getItem(STORAGE_KEYS.SELECTED_THEME) as ThemeName | null;
-    const theme = savedTheme && THEMES[savedTheme] ? THEMES[savedTheme] : THEMES['art-deco'];
+    const theme = savedTheme && THEMES[savedTheme] ? THEMES[savedTheme] : THEMES['chalet'];
     this.currentThemeSignal.set(theme);
     this.applyTheme(theme);
   }

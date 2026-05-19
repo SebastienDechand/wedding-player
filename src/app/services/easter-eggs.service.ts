@@ -1,8 +1,10 @@
-import { Injectable, signal, computed } from '@angular/core';
+import { Injectable, signal, computed, inject } from '@angular/core';
 import type { ConfettiPiece } from '../models/easter-egg.model';
+import { ThemeService } from './theme.service';
 
 @Injectable({ providedIn: 'root' })
 export class EasterEggsService {
+  private readonly theme = inject(ThemeService);
   readonly eggElfActive = signal(false);
   readonly eggCrossActive = signal(false);
   readonly eggRingsActive = signal(false);
@@ -19,13 +21,13 @@ export class EasterEggsService {
   readonly vinylCenterColor = computed(() => {
     if (this.vinylColor() === 'white') return '#f5f5f0';
     if (this.vinylColor() === 'pink') return '#ff69b4';
-    return '#3a82b8';
+    return this.theme.currentTheme().colorPrimary;
   });
 
   readonly vinylInnerColor = computed(() => {
     if (this.vinylColor() === 'white') return '#e8e8e0';
     if (this.vinylColor() === 'pink') return '#d44fa0';
-    return '#2060a0';
+    return this.theme.currentTheme().colorSecondary;
   });
 
   private timers: ReturnType<typeof setTimeout>[] = [];

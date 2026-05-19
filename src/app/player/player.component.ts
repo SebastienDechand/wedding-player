@@ -5,6 +5,7 @@ import { VinylStageComponent } from '../components/vinyl-stage/vinyl-stage.compo
 import { TrackInfoComponent } from '../components/track-info/track-info.component';
 import { PlaybackControlsComponent } from '../components/playback-controls/playback-controls.component';
 import { ProgressBarComponent } from '../components/progress-bar/progress-bar.component';
+import { ThemeSelectorComponent } from '../components/theme-selector/theme-selector.component';
 
 @Component({
   selector: 'app-player',
@@ -15,6 +16,7 @@ import { ProgressBarComponent } from '../components/progress-bar/progress-bar.co
     TrackInfoComponent,
     PlaybackControlsComponent,
     ProgressBarComponent,
+    ThemeSelectorComponent,
   ],
   templateUrl: './player.component.html',
   styleUrls: ['./player.component.scss'],

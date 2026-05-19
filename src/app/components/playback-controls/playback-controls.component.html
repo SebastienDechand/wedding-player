@@ -10,16 +10,39 @@
     <button class="ctrl-btn" (click)="playlist.next()" aria-label="Next">▶|</button>
   </div>
 
-  <div class="volume-wrap">
-    <span class="vol-icon">♪</span>
-    <input
-      class="volume-slider"
-      type="range"
-      min="0"
-      max="100"
-      [value]="audio.volume()"
-      (input)="audio.setVolume(+$any($event.target).value)"
-      aria-label="Volume"
-    />
+  <div class="controls-right">
+    <div class="mode-btns">
+      <button
+        class="mode-btn"
+        [class.active]="playlist.shuffle()"
+        (click)="playlist.toggleShuffle()"
+        title="Aléatoire"
+      >⇄</button>
+      <button
+        class="mode-btn"
+        [class.active]="playlist.repeat() !== 'none'"
+        (click)="playlist.cycleRepeat()"
+        [title]="'Répéter : ' + playlist.repeat()"
+      >{{ playlist.repeat() === 'one' ? '↺¹' : '↺' }}</button>
+      <button
+        class="mode-btn"
+        [class.active]="audio.crossfade()"
+        (click)="audio.toggleCrossfade()"
+        title="Fondu enchaîné"
+      >⇌</button>
+    </div>
+
+    <div class="volume-wrap">
+      <span class="vol-icon">♪</span>
+      <input
+        class="volume-slider"
+        type="range"
+        min="0"
+        max="100"
+        [value]="audio.volume()"
+        (input)="audio.setVolume(+$any($event.target).value)"
+        aria-label="Volume"
+      />
+    </div>
   </div>
 </div>

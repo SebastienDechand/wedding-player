@@ -17,9 +17,29 @@ export class PlaylistService {
   readonly playlist = signal<Track[]>(TRACKS);
   readonly currentTrackIndex = signal(0);
   readonly currentTrack = computed(() => this.playlist()[this.currentTrackIndex()]);
+  readonly shuffle = signal(false);
+  readonly repeat = signal<'none' | 'all' | 'one'>('none');
+
+  toggleShuffle(): void {
+    this.shuffle.update(v => !v);
+  }
+
+  cycleRepeat(): void {
+    const next: Record<string, 'none' | 'all' | 'one'> = { none: 'all', all: 'one', one: 'none' };
+    this.repeat.update(v => next[v]);
+  }
 
   next(): void {
-    this.currentTrackIndex.update(i => (i + 1) % this.playlist().length);
+    if (this.shuffle()) {
+      const len = this.playlist().length;
+      if (len <= 1) return;
+      let nextIdx: number;
+      do { nextIdx = Math.floor(Math.random() * len); }
+      while (nextIdx === this.currentTrackIndex());
+      this.currentTrackIndex.set(nextIdx);
+    } else {
+      this.currentTrackIndex.update(i => (i + 1) % this.playlist().length);
+    }
   }
 
   previous(): void {

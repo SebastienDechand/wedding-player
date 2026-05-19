@@ -13,10 +13,10 @@
   </div>
 }
 
-<div class="cozy-bar">
-  <span class="cozy-leaf">🌿</span>
-  <span class="cozy-fire" [class.lit]="active()">🔥</span>
+<div class="cozy-bar" (click)="toggle()">
+  <span class="cozy-leaf">{{ icons().deco }}</span>
+  <span class="cozy-fire" [class.lit]="active()">{{ icons().active }}</span>
   <span class="cozy-label" [class.active]="active()">cozy mode</span>
-  <span class="cozy-fire" [class.lit]="active()">🔥</span>
-  <span class="cozy-leaf">🌿</span>
+  <span class="cozy-fire" [class.lit]="active()">{{ icons().active }}</span>
+  <span class="cozy-leaf">{{ icons().deco }}</span>
 </div>

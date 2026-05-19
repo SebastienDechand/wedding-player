@@ -1,13 +1,17 @@
-<div class="theme-selector">
-  @for (theme of themes(); track theme.name) {
-    <button
-      class="theme-swatch"
-      [class.active]="theme.name === currentTheme().name"
-      (click)="selectTheme(theme.name)"
-      [title]="theme.label + ' — ' + theme.description"
-      [style.--sw-color]="theme.colorPrimary"
-      [style.--sw-border]="theme.colorBorder"
-      [attr.aria-label]="theme.label"
-    ></button>
+<div class="theme-wrap">
+  <button class="theme-btn" (click)="toggleOpen()" [title]="currentTheme().label">◈</button>
+  @if (isOpen()) {
+    <div class="theme-menu">
+      @for (theme of themes(); track theme.name) {
+        <button
+          class="theme-option"
+          [class.active]="theme.name === currentTheme().name"
+          (click)="selectTheme(theme.name)"
+        >
+          <span class="swatch" [style.background]="theme.colorPrimary"></span>
+          {{ theme.label }}
+        </button>
+      }
+    </div>
   }
 </div>

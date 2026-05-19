@@ -1,30 +1,76 @@
-.theme-selector {
+.theme-wrap {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 7px 14px;
-  background: var(--color-surface);
-  border-top: 1px solid var(--color-border);
+  -webkit-app-region: no-drag;
 }
 
-.theme-swatch {
-  width: 18px;
-  height: 18px;
-  border: 2px solid var(--sw-border, var(--color-border));
-  background: var(--sw-color);
+.theme-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 13px;
+  border: 1px solid var(--color-border);
+  background: var(--color-surface);
+  color: var(--color-muted);
+  font-size: 9px;
+  line-height: 0;
   cursor: pointer;
+  font-family: "Courier New", Courier, monospace;
   padding: 0;
-  transition: transform 0.08s;
-  flex-shrink: 0;
 
   &:hover {
-    transform: scale(1.2);
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+}
+
+.theme-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  right: 0;
+  z-index: 200;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  min-width: 130px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 0 var(--color-border);
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 8px;
+  font-size: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--color-muted);
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--color-border);
+  cursor: pointer;
+  text-align: left;
+  width: 100%;
+
+  &:last-child {
+    border-bottom: none;
+  }
+
+  &:hover {
+    background: var(--color-border);
+    color: var(--color-text);
   }
 
   &.active {
-    box-shadow:
-      0 0 0 2px var(--color-text),
-      0 0 0 4px var(--sw-color);
+    color: var(--color-primary);
   }
+}
+
+.swatch {
+  width: 8px;
+  height: 8px;
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }

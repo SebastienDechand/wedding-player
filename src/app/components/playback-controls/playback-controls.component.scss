@@ -1,9 +1,17 @@
 .controls {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   padding: 10px 14px;
   background: var(--color-surface);
+}
+
+.controls-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
 }
 
 .btn-group {
@@ -107,5 +115,39 @@
     border: none;
     border-radius: 50%;
     cursor: pointer;
+  }
+}
+
+.mode-btns {
+  display: flex;
+  justify-content: flex-end;
+  gap: 4px;
+  flex-shrink: 0;
+}
+
+.mode-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-muted);
+  font-size: 10px;
+  line-height: 0;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 0;
+
+  &:hover {
+    background: var(--color-border);
+    color: var(--color-text);
+  }
+
+  &.active {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+    box-shadow: 0 0 6px var(--color-glow);
   }
 }

@@ -1,4 +1,4 @@
-export type ThemeName = 'mycelium' | 'pixel-quest' | 'velvet-screen' | 'art-deco';
+export type ThemeName = 'mycelium' | 'pixel-quest' | 'velvet-screen' | 'chalet' | 'art-deco';
 
 export interface Theme {
   name: ThemeName;
