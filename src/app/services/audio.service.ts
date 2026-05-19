@@ -39,8 +39,11 @@ export class AudioService {
       this.audio.pause();
       this.playing.set(false);
     } else {
-      this.audio.play();
-      this.playing.set(true);
+      this.audio.play().then(() => {
+        this.playing.set(true);
+      }).catch(err => {
+        console.error('Audio play failed:', err);
+      });
     }
   }
 

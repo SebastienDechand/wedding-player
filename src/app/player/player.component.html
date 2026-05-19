@@ -10,24 +10,14 @@
     <span class="title-heart">♥</span>
     <span class="title-text">love player</span>
     <div class="title-btns">
-      <button
-        class="tbtn tl-toggle"
-        [class.active]="showTracklist()"
-        (click)="showTracklist.set(!showTracklist())"
-        [title]="showTracklist() ? 'Platine' : 'Playlist'"
-      >≡</button>
-      <button class="tbtn" (click)="minimizeWindow()">□</button>
+      <button class="tbtn" (click)="minimizeWindow()" title="Réduire">−</button>
       <button class="tbtn" (click)="closeWindow()">×</button>
     </div>
   </div>
 
-  @if (showTracklist()) {
-    <app-tracklist />
-  } @else {
-    <div class="scene">
-      <app-vinyl-stage />
-    </div>
-  }
+  <div class="scene">
+    <app-vinyl-stage />
+  </div>
 
   <app-track-info />
   <app-playback-controls />
@@ -35,21 +25,4 @@
 
   <app-cozy-mode />
 
-  <!-- Egg 3: popup plaque Harley (Coline) -->
-  @if (eggs.eggMotoActive()) {
-    <div class="egg-moto-backdrop" (click)="eggs.closeMotoEgg()">
-      <div class="egg-moto-plate" (click)="$event.stopPropagation()">
-        <button class="egg-moto-close" (click)="eggs.closeMotoEgg()">×</button>
-        <div class="egg-plate-side">
-          <div class="egg-plate-stars">★★★<br/>★&nbsp;★<br/>★★★</div>
-          <div class="egg-plate-country">F</div>
-        </div>
-        <div class="egg-plate-body">
-          <div class="egg-plate-text">MERCI D'AVOIR ETE LA</div>
-          <div class="egg-plate-text">POUR MOI</div>
-          <div class="egg-plate-heart">♡</div>
-        </div>
-      </div>
-    </div>
-  }
 </div>

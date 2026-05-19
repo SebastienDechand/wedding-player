@@ -26,13 +26,8 @@
   padding: 6px 14px;
   background: var(--color-surface);
   border-top: 1px solid var(--color-border);
-  cursor: pointer;
   user-select: none;
   transition: background 0.2s;
-
-  &:hover {
-    background: var(--color-title-bar);
-  }
 }
 
 .cozy-label {
@@ -70,12 +65,24 @@
 // ================================================
 
 @keyframes cozy-rise {
-  0%   { transform: translateY(0) rotate(-5deg);   opacity: 0.9; }
-  60%  { opacity: 0.7; }
-  100% { transform: translateY(-420px) rotate(15deg); opacity: 0; }
+  0% {
+    transform: translateY(0) rotate(-5deg);
+    opacity: 0.9;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-420px) rotate(15deg);
+    opacity: 0;
+  }
 }
 
 @keyframes cozy-flicker {
-  0%   { transform: scale(1) rotate(-3deg);   }
-  100% { transform: scale(1.15) rotate(3deg); }
+  0% {
+    transform: scale(1) rotate(-3deg);
+  }
+  100% {
+    transform: scale(1.15) rotate(3deg);
+  }
 }

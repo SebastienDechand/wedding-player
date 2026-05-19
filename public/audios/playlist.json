@@ -2,136 +2,155 @@
   "playlist": [
     {
       "id": 1,
-      "title": "Unsainted",
-      "artist": "Slipknot",
-      "url": "",
-      "duration": "4:21"
+      "title": "Iris",
+      "artist": "Goo Goo Dolls",
+      "url": "audios/iris_goo_goo_dolls.mp3",
+      "duration": "4:49",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/2c/13/18/2c131801-00af-58b1-3cc2-13abf4ad5416/093624919162.jpg/300x300bb.jpg"
     },
     {
       "id": 2,
       "title": "Gipsy",
       "artist": "Fleetwood Mac",
-      "url": "",
-      "duration": "4:24"
+      "url": "audios/gipsy_fleetwood_mac.mp3",
+      "duration": "4:24",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a1/cf/39/a1cf3997-0227-2235-2eee-0585e757dbfe/603497876129.jpg/300x300bb.jpg"
     },
     {
       "id": 3,
       "title": "Jaded",
       "artist": "Soil",
-      "url": "",
-      "duration": "2:37"
+      "url": "audios/jaded_soil.mp3",
+      "duration": "2:37",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/2d/6b/d3/2d6bd38c-76e7-1d87-3b33-0d9e55ed4de4/887396943797.jpg/300x300bb.jpg"
     },
     {
       "id": 4,
       "title": "Never Too Late",
       "artist": "Three Days Grace",
-      "url": "",
-      "duration": "3:29"
+      "url": "audios/never_too_late_three_days_grace.mp3",
+      "duration": "3:29",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/cf/b4/5f/mzi.vgwnjneb.jpg/300x300bb.jpg"
     },
     {
       "id": 5,
       "title": "Simple Man - Live",
       "artist": "Lynyrd Skynyrd",
-      "url": "",
-      "duration": "8:30"
+      "url": "audios/simple_man_live_lynyrd_skynyrd.mp3",
+      "duration": "8:30",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/cc/ff/39/ccff392e-ec9d-1ffd-6c1b-d21978bca939/06UMGIM02061.rgb.jpg/300x300bb.jpg"
     },
     {
       "id": 6,
-      "title": "Iris",
-      "artist": "Goo Goo Dolls",
-      "url": "",
-      "duration": "4:49"
+      "title": "Unsainted",
+      "artist": "Slipknot",
+      "url": "audios/unsainted_slipknot.mp3",
+      "duration": "4:21",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/43/be/e2/43bee25e-8278-0808-6d47-7baf57a208cc/192641397035_Cover.jpg/300x300bb.jpg"
     },
     {
       "id": 7,
       "title": "Last to Know",
       "artist": "Three Days Grace",
-      "url": "",
-      "duration": "3:27"
+      "url": "audios/last_to_know_three_days_grace.mp3",
+      "duration": "3:27",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/84/f1/cf/mzi.susmvvmk.jpg/300x300bb.jpg"
     },
     {
       "id": 8,
       "title": "tolerate it",
       "artist": "Taylor Swift",
-      "url": "",
-      "duration": "4:05"
+      "url": "audios/tolerate_it_taylor_swift.mp3",
+      "duration": "4:05",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/20/ce/9c/20ce9c97-90e7-a636-4987-c08a40258455/5059962619718_cover.jpg/300x300bb.jpg"
     },
     {
       "id": 9,
       "title": "2:00",
       "artist": "SCH, Damso",
-      "url": "",
-      "duration": "3:17"
+      "url": "audios/2h00_sch_damso.mp3",
+      "duration": "3:17",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/f38a9942047361e6eaeb78ddde0eac0d/300x300-000000-80-0-0.jpg"
     },
     {
       "id": 10,
       "title": "Jusqu'au dernier gramme",
       "artist": "PNL",
-      "url": "",
-      "duration": "5:53"
+      "url": "audios/jusquau_dernier_gramme_pnl.mp3",
+      "duration": "5:53",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/09/cf/73/09cf7371-d937-8c1e-0739-90e4e8df4d2f/artwork.jpg/300x300bb.jpg"
     },
     {
       "id": 11,
       "title": "We Got the Moves",
       "artist": "Electric Callboy",
-      "url": "",
-      "duration": "3:26"
+      "url": "audios/we_got_the_moves_electric_callboy.mp3",
+      "duration": "3:26",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a0/44/6b/a0446b80-0d5c-789c-772f-b76b457b586e/21UMGIM10468.rgb.jpg/300x300bb.jpg"
     },
     {
       "id": 12,
       "title": "Dreams",
       "artist": "Fleetwood Mac",
-      "url": "",
-      "duration": "4:14"
+      "url": "audios/dreams_fleetwood_mac.mp3",
+      "duration": "4:14",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d2/48/f4/d248f4ae-a7e4-a48e-1588-6617de3e8d76/mzi.izeorbmm.jpg/300x300bb.jpg"
     },
     {
       "id": 13,
       "title": "Je t'aimais, je t'aime, je t'aimerai",
-      "artist": "Franis Cabrel",
-      "url": "",
-      "duration": "4:36"
+      "artist": "Francis Cabrel",
+      "url": "audios/je_taimais_je_taime_je_taimerai_francis_cabrel.mp3",
+      "duration": "4:36",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/ec/0d/99/ec0d996f-0c45-bc84-6485-5238ae1cd246/dj.ogkgxpzj.jpg/300x300bb.jpg"
     },
     {
       "id": 14,
       "title": "S.O.S. d'un terrien en détresse",
       "artist": "Daniel Balavoine",
-      "url": "",
-      "duration": "3:06"
+      "url": "audios/sos_terrien_en_detresse_daniel_balavoine.mp3",
+      "duration": "3:06",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/11/9f/8a119fd6-a4a9-a895-689d-02038f344169/825646431779.jpg/300x300bb.jpg"
     },
     {
       "id": 15,
       "title": "Je t'aime",
       "artist": "Michel Polnareff",
-      "url": "",
-      "duration": "4:44"
+      "url": "audios/je_taime_michel_polnareff.mp3",
+      "duration": "4:44",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/6d/44/5f/6d445fce-8037-48c0-a42c-625c8ca7529d/00731454985420.rgb.jpg/300x300bb.jpg"
     },
     {
       "id": 16,
       "title": "The Sound of Silence",
       "artist": "Disturbed",
-      "url": "",
-      "duration": "4:08"
+      "url": "audios/the_sound_of_silence_disturbed.mp3",
+      "duration": "4:08",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/32/2b/12/322b1228-a133-3317-8d05-742669b700ec/093624926245.jpg/300x300bb.jpg"
     },
     {
       "id": 17,
       "title": "Wicked Game - Acoustic; Live",
       "artist": "Stone Sour",
-      "url": "",
-      "duration": "4:27"
+      "url": "audios/wicked_game_acoustic_live_stone_sour.mp3",
+      "duration": "4:27",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/90/0c/d8/mzi.zhdjujvj.jpg/300x300bb.jpg"
     },
     {
       "id": 18,
       "title": "Si jamais j'oublie",
       "artist": "Zaz",
-      "url": "",
-      "duration": "3:29"
+      "url": "audios/si_jamais_joublie_zaz.mp3",
+      "duration": "3:29",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/9e/80/53/9e805397-df5c-53dd-27ce-a0e66c572f5f/825646021765.jpg/300x300bb.jpg"
     },
     {
       "id": 19,
       "title": "Secret",
       "artist": "Louane",
-      "url": "",
-      "duration": "3:11"
+      "url": "audios/secret_louane.mp3",
+      "duration": "3:11",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ac/3b/1b/ac3b1ba0-f63e-d122-0d8f-9fb541037c3f/22UM1IM14025.rgb.jpg/300x300bb.jpg"
     }
   ]
 }

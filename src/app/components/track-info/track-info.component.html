@@ -6,7 +6,11 @@
   </div>
   <div class="track-detail-row">
     <div class="album-thumb">
-      <span class="album-note">♪</span>
+      @if (playlist.currentTrack().cover) {
+        <img class="album-cover" [src]="playlist.currentTrack().cover" [alt]="playlist.currentTrack().title" />
+      } @else {
+        <span class="album-note">♪</span>
+      }
     </div>
     <div class="track-meta">
       <div class="track-title-clip">

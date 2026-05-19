@@ -5,7 +5,6 @@ import type { ConfettiPiece } from '../models/easter-egg.model';
 export class EasterEggsService {
   readonly eggElfActive = signal(false);
   readonly eggCrossActive = signal(false);
-  readonly eggMotoActive = signal(false);
   readonly eggRingsActive = signal(false);
   readonly eggFoxActive = signal(false);
   readonly eggCalendarActive = signal(false);
@@ -46,14 +45,6 @@ export class EasterEggsService {
     if (this.eggCrossActive()) return;
     this.eggCrossActive.set(true);
     this.schedule(() => this.eggCrossActive.set(false), 2000);
-  }
-
-  triggerMotoEgg(): void {
-    this.eggMotoActive.set(true);
-  }
-
-  closeMotoEgg(): void {
-    this.eggMotoActive.set(false);
   }
 
   triggerRingsEgg(): void {

@@ -9,3 +9,20 @@
   </div>
   <span class="time-label">{{ audio.formatTime(audio.duration()) }}</span>
 </div>
+<div class="up-next">
+  @for (item of upNext(); track item.track.id) {
+    <button
+      class="un-item"
+      [class.un-current]="item.isCurrent"
+      (click)="playlist.selectTrack(playlist.playlist().indexOf(item.track))"
+    >
+      @if (item.isCurrent) {
+        <span class="un-indicator">▶</span>
+      } @else {
+        <span class="un-indicator">·</span>
+      }
+      <span class="un-title">{{ item.track.title }}</span>
+      <span class="un-artist">{{ item.track.artist }}</span>
+    </button>
+  }
+</div>
