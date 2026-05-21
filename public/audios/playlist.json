@@ -151,6 +151,86 @@
       "url": "audios/secret_louane.mp3",
       "duration": "3:11",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ac/3b/1b/ac3b1ba0-f63e-d122-0d8f-9fb541037c3f/22UM1IM14025.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 20,
+      "title": "hot girl bummer",
+      "artist": "blackbear",
+      "url": "audios/hot_girl_bummer_blackbear.mp3",
+      "duration": "3:08",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/83/fc/17/83fc17c8-c92c-b44e-22e0-de330991c915/602507117108.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 21,
+      "title": "Till It's Gone",
+      "artist": "Yelawolf",
+      "url": "audios/till_its_gone_yelawolf.mp3",
+      "duration": "4:47",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/cf/4c/b9/cf4cb941-426d-e60f-2470-8a20c7ea42ea/886444749657.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 22,
+      "title": "Kill Our Way to Heaven",
+      "artist": "Michl",
+      "url": "audios/kill_our_way_to_heaven_michl.mp3",
+      "duration": "3:52",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c5/e5/77/c5e577de-4f97-4a09-9cec-fc102c15ab79/859717873601_cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 23,
+      "title": "Come Join the Murder",
+      "artist": "The White Buffalo",
+      "url": "audios/come_join_the_murder_white_buffalo.mp3",
+      "duration": "7:28",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ac/41/a6/ac41a692-a434-a4e6-d312-4665163be463/886444977753.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 24,
+      "title": "Standstill",
+      "artist": "Poets of the Fall",
+      "url": "audios/standstill_poets_of_the_fall.mp3",
+      "duration": "3:47",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d4/bd/7a/d4bd7af3-bae8-6c30-7cfe-6bf20f734878/cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 25,
+      "title": "Hallelujah",
+      "artist": "Theory of a Deadman",
+      "url": "audios/hallelujah_theory_of_a_deadman.mp3",
+      "duration": "4:43",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/fc/69/48/fc694836-fcc5-8a86-99fc-612591955e41/016861343835.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 26,
+      "title": "Metalingus",
+      "artist": "Alter Bridge",
+      "url": "audios/metalingus_alter_bridge.mp3",
+      "duration": "4:20",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2d/27/ee/2d27ee51-35d1-f7c2-26c8-6eca18f7143f/00601501409721.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 27,
+      "title": "You're a Fucking Bitch Hope You Know That Shit",
+      "artist": "Atlus",
+      "url": "audios/youre_a_fucking_bitch_atlus.mp3",
+      "duration": "2:44",
+      "cover": "https://cdn-images.dzcdn.net/images/cover/8d0eedb73990cc8d1f7bb7786e7f3d0e/500x500-000000-80-0-0.jpg"
+    },
+    {
+      "id": 28,
+      "title": "Bottom of a Bottle",
+      "artist": "Smile Empty Soul",
+      "url": "audios/bottom_of_a_bottle_smile_empty_soul.mp3",
+      "duration": "3:42",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/63/37/68/63376847-849c-0861-9c14-4ff19c63180c/859745424462_cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 29,
+      "title": "Do I Wanna Know?",
+      "artist": "Arctic Monkeys",
+      "url": "audios/do_i_wanna_know_arctic_monkeys.mp3",
+      "duration": "4:26",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/cc/0f/2d/cc0f2d02-5ff1-10e7-eea2-76863a55dbad/887828031795.png/300x300bb.jpg"
     }
   ]
 }

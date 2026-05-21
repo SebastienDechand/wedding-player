@@ -33,6 +33,7 @@ pnpm-debug.log*
 
 # Coverage
 coverage/
+release/
 
 # Misc
 /.history/
