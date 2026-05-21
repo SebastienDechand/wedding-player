@@ -51,6 +51,50 @@
   z-index: 3;
 }
 
+.stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #be8e7b;
+  box-shadow: 0 0 2px 1px rgba(199, 164, 149, 0.8);
+  animation: twinkle 2.4s ease-in-out infinite;
+}
+
+.star-1 {
+  top: 10%;
+  left: 55%;
+  animation-delay: 0s;
+}
+.star-2 {
+  top: 7%;
+  left: 75%;
+  animation-delay: 0.9s;
+}
+.star-3 {
+  top: 20%;
+  left: 60%;
+  animation-delay: 1.7s;
+}
+
+@keyframes twinkle {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.1;
+    transform: scale(0.5);
+  }
+}
+
 @keyframes disc-swap {
   0% {
     transform: translateX(0);

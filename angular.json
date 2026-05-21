@@ -20,7 +20,8 @@
             "assets": [
               "src/assets",
               { "glob": "**/*", "input": "public/assets", "output": "assets" },
-              { "glob": "**/*", "input": "public/audios", "output": "audios" }
+              { "glob": "**/*", "input": "public/audios", "output": "audios" },
+              { "glob": "**/*", "input": "public/sounds", "output": "sounds" }
             ],
             "styles": ["src/styles.scss"],
             "scripts": []

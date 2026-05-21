@@ -20,6 +20,16 @@
   (click)="eggs.triggerCrossEgg()"
 />
 
+<!-- Egg 3: Moto / Harley -->
+<img
+  class="egg egg-moto-trigger"
+  [class.hidden]="eggs.eggMotoActive()"
+  src="assets/moto.png"
+  alt=""
+  draggable="false"
+  (click)="eggs.triggerMotoEgg()"
+/>
+
 <!-- Egg 4: Bagues (mariage) — visibles pendant le grand bounce de Roll -->
 <img
   class="egg egg-rings"
@@ -93,6 +103,15 @@
 <!-- Egg 2: overlay rouge (shake géré sur .player-window) -->
 @if (eggs.eggCrossActive()) {
   <div class="egg-cross-overlay"></div>
+}
+
+<!-- Egg 3: Harley qui traverse + enseigne diner -->
+@if (eggs.eggMotoActive()) {
+  <img class="egg-moto-bike" src="assets/moto.png" alt="" draggable="false" />
+  <div class="egg-diner-sign">
+    <div class="diner-top">★ OPEN ★</div>
+    <div class="diner-msg">Merci d'avoir été là ♥</div>
+  </div>
 }
 
 <!-- Eggs 4 & 5: confettis -->
