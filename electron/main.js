@@ -10,7 +10,9 @@ function createWindow() {
     resizable: false,
     frame: false,
     backgroundColor: "#0a0808",
-    icon: path.join(__dirname, "..", "public", "assets", "tourne_disque.png"),
+    icon: app.isPackaged
+      ? path.join(process.resourcesPath, "icon.png")
+      : path.join(__dirname, "..", "public", "assets", "tourne_disque.png"),
     show: false,
     webPreferences: {
       nodeIntegration: false,
@@ -23,7 +25,7 @@ function createWindow() {
     __dirname,
     "..",
     "dist",
-    "wedding-player",
+    "b-loved",
     "browser",
     "index.html",
   );

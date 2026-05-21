@@ -1,5 +1,5 @@
 {
-  "name": "wedding-player",
+  "name": "b-loved",
   "version": "0.1.0",
   "private": true,
   "main": "electron/main.js",
@@ -10,15 +10,19 @@
     "electron:build": "ng build && electron-builder"
   },
   "build": {
-    "appId": "com.sebastien.wedding-player",
-    "productName": "Wedding Player",
+    "appId": "com.sebastien.b-loved",
+    "productName": "B-Loved",
+    "icon": "public/assets/tourne_disque.png",
     "directories": {
       "output": "release"
     },
     "files": [
       "electron/**/*",
-      "dist/wedding-player/browser/**/*",
+      "dist/b-loved/browser/**/*",
       "package.json"
+    ],
+    "extraResources": [
+      { "from": "public/assets/tourne_disque.png", "to": "icon.png" }
     ],
     "win": {
       "target": [{ "target": "nsis", "arch": ["x64"] }]

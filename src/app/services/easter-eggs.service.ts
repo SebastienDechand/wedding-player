@@ -159,6 +159,7 @@ export class EasterEggsService {
         this.jour1Sfx.play();
       }
     }, 350);
+    this.timers.push(iv as unknown as ReturnType<typeof setTimeout>);
     this.schedule(() => {
       this.eggCalendarActive.set(false);
       this.calendarYear.set(2026);
