@@ -7,7 +7,10 @@
     "start": "ng serve",
     "build": "ng build",
     "electron:dev": "ng build --configuration=development && node electron/start-electron.js",
-    "electron:build": "ng build && electron-builder"
+    "electron:build": "ng build && electron-builder",
+    "mobile:sync": "ng build && npx cap sync android",
+    "mobile:android": "ng build && npx cap sync android && npx cap open android",
+    "mobile:run": "ng build && npx cap sync android && npx cap run android"
   },
   "build": {
     "appId": "com.sebastien.b-loved",
@@ -22,10 +25,20 @@
       "package.json"
     ],
     "extraResources": [
-      { "from": "public/assets/tourne_disque.png", "to": "icon.png" }
+      {
+        "from": "public/assets/tourne_disque.png",
+        "to": "icon.png"
+      }
     ],
     "win": {
-      "target": [{ "target": "nsis", "arch": ["x64"] }]
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
     }
   },
   "dependencies": {
@@ -36,15 +49,18 @@
     "@angular/forms": "^20.0.0",
     "@angular/platform-browser": "^20.0.0",
     "@angular/platform-browser-dynamic": "^20.0.0",
+    "@capacitor/android": "^8.3.4",
+    "@capacitor/cli": "^8.3.4",
+    "@capacitor/core": "^8.3.4",
     "rxjs": "^7.8.2",
     "zone.js": "^0.15.0"
   },
   "devDependencies": {
-    "typescript": "^5.8.0",
-    "@angular/cli": "^20.0.0",
     "@angular-devkit/build-angular": "^20.0.0",
+    "@angular/cli": "^20.0.0",
     "@angular/compiler-cli": "^20.0.0",
     "electron": "^25.0.0",
-    "electron-builder": "^24.0.0"
+    "electron-builder": "^24.0.0",
+    "typescript": "^5.8.0"
   }
 }

@@ -1,4 +1,4 @@
-import { Injectable, signal, computed, effect, inject } from '@angular/core';
+import { Injectable, signal, computed, effect, inject, untracked } from '@angular/core';
 import { PlaylistService } from './playlist.service';
 
 @Injectable({ providedIn: 'root' })
@@ -39,7 +39,9 @@ export class AudioService {
 
     effect(() => {
       const track = this.playlist.currentTrack();
-      const wasPlaying = this.playing();
+      // untracked() : lit playing sans créer de dépendance reactive.
+      // Sans ça, chaque pause/play déclenchait le rechargement de l'audio → reset à 0.
+      const wasPlaying = untracked(() => this.playing());
       if (this.crossfade() && wasPlaying && this.audio.src) {
         this.performCrossfade(track.url);
       } else {

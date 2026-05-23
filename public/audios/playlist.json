@@ -231,6 +231,94 @@
       "url": "audios/do_i_wanna_know_arctic_monkeys.mp3",
       "duration": "4:26",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/cc/0f/2d/cc0f2d02-5ff1-10e7-eea2-76863a55dbad/887828031795.png/300x300bb.jpg"
+    },
+    {
+      "id": 30,
+      "title": "Ain't It Fun",
+      "artist": "Paramore",
+      "url": "audios/aint_it_fun_paramore.mp3",
+      "duration": "4:56",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/32/cb/9d/32cb9d04-ef0f-93bb-fd2f-19b395785025/075679956187.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 31,
+      "title": "July",
+      "artist": "Noah Cyrus",
+      "url": "audios/july_noah_cyrus.mp3",
+      "duration": "2:36",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/67/c5/9f/67c59f61-5676-e282-8f86-f8fcebaaa045/886448371564.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 32,
+      "title": "The Sex Is Good",
+      "artist": "Saving Abel",
+      "url": "audios/the_sex_is_good_saving_abel.mp3",
+      "duration": "3:31",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/48/56/79/48567930-b42c-aa7b-e119-ab5f713ffe8d/05099968460259.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 33,
+      "title": "Younger Now",
+      "artist": "Miley Cyrus",
+      "url": "audios/younger_now_miley_cyrus.mp3",
+      "duration": "4:08",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c3/cc/87/c3cc8787-6535-319e-5cba-bc75bc0b0e6e/886446685601.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 34,
+      "title": "Une seule vie",
+      "artist": "Taïro",
+      "url": "audios/une_seule_vie_tairo.mp3",
+      "duration": "3:52",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b6/54/41/b6544176-db9c-e9d0-23d6-f2009900d7fd/3663729168054_cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 35,
+      "title": "L'odeur de l'essence",
+      "artist": "Orelsan",
+      "url": "audios/lodeur_de_lessence_orelsan.mp3",
+      "duration": "4:42",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ce/1b/fc/ce1bfc78-00af-78ad-8b5b-cf19ff8e604b/3596974065826.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 36,
+      "title": "Lonely",
+      "artist": "Justin Bieber, benny blanco",
+      "url": "audios/lonely_justin_bieber.mp3",
+      "duration": "2:29",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b9/d9/e1/b9d9e1cf-c187-5d03-a2ca-2565bd4f1e5d/20UMGIM83529.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 37,
+      "title": "ivy",
+      "artist": "Taylor Swift",
+      "url": "audios/ivy_taylor_swift.mp3",
+      "duration": "4:20",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/82/33/6e/82336ed3-3d1b-e920-b0a7-61775acd0f33/20UM1IM14847.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 38,
+      "title": "I See Fire",
+      "artist": "Ed Sheeran",
+      "url": "audios/i_see_fire_ed_sheeran.mp3",
+      "duration": "5:00",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0c/05/fd/0c05fd70-986c-a522-1951-69ac18a19734/794043173530.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 39,
+      "title": "Warbringers: Jaina",
+      "artist": "Neal Acree, Logan Laflotte",
+      "url": "audios/warbringers_jaina.mp3",
+      "duration": "4:08",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/e9/98/bde99861-2fc7-9447-1288-614f7fea354f/047875730588_cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 40,
+      "title": "i love you",
+      "artist": "Billie Eilish",
+      "url": "audios/i_love_you_billie_eilish.mp3",
+      "duration": "4:51",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/300x300bb.jpg"
     }
   ]
 }

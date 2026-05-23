@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">B-Loved</string>
+    <string name="title_activity_main">B-Loved</string>
+    <string name="package_name">com.sebastien.bloved</string>
+    <string name="custom_url_scheme">com.sebastien.bloved</string>
+</resources>

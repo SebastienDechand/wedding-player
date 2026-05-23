@@ -45,10 +45,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "wedding-player:build:production"
+              "buildTarget": "b-loved:build:production"
             },
             "development": {
-              "buildTarget": "wedding-player:build:development"
+              "buildTarget": "b-loved:build:development"
             }
           },
           "defaultConfiguration": "development"

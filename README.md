@@ -1,4 +1,4 @@
-# wedding-player
+# B-loved Player
 
 Prototype Angular + Electron player (turntable style) — MVP pour mariage.
 

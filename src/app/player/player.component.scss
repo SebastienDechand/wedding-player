@@ -5,6 +5,10 @@
 :host {
   display: flex;
   justify-content: center;
+
+  @media (max-width: 600px) {
+    width: 100%;
+  }
 }
 
 * {
@@ -22,6 +26,15 @@
   font-family: "Courier New", Courier, monospace;
   user-select: none;
   position: relative;
+
+  // Mobile : plein largeur, sans bordures latérales, remplit l'écran
+  @media (max-width: 600px) {
+    width: 100%;
+    border-left: none;
+    border-right: none;
+    outline: none;
+    min-height: 100dvh;
+  }
 }
 
 // ---- CORNER PIXEL ORNAMENTS ----
@@ -123,6 +136,14 @@ button.tbtn {
   overflow: hidden;
   border-bottom: 2px solid var(--color-border);
   position: relative;
+
+  // Mobile : maintient les proportions desktop (310:300) pour aligner vinyl + décors
+  @media (max-width: 600px) {
+    height: auto;
+    aspect-ratio: 310 / 300;
+    max-height: none;
+    min-height: unset;
+  }
 }
 
 // ================================================
@@ -149,4 +170,3 @@ button.tbtn {
     transform: translateX(4px);
   }
 }
-
