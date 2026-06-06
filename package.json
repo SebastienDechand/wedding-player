@@ -6,6 +6,9 @@
   "scripts": {
     "start": "ng serve",
     "build": "ng build",
+    "add-song": "node scripts/add-song.js",
+    "remove-song": "node scripts/remove-song.js",
+    "fetch-lyrics": "node scripts/fetch-lyrics.js",
     "electron:dev": "ng build --configuration=development && node electron/start-electron.js",
     "electron:build": "ng build && electron-builder",
     "mobile:sync": "ng build && npx cap sync android",
