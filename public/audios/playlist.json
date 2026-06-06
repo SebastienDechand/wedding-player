@@ -295,6 +295,14 @@
       "url": "audios/coney_island_taylor_swift.mp3",
       "duration": "4:35",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/bd/dd/54/bddd543b-4e0f-007b-1398-5fef90b963c3/20UM1IM14847.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 38,
+      "title": "One Of Us",
+      "artist": "Joan Osborne",
+      "url": "audios/one_of_us_joan_osborne.mp3",
+      "duration": "5:02",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music118/v4/96/e1/4a/96e14ad8-1fc3-08ce-d2cd-6c91613f22f3/00602498624593.rgb.jpg/300x300bb.jpg"
     }
   ]
 }

@@ -1,0 +1,15 @@
+@if (lyrics.showLyrics()) {
+  <div class="lyrics-overlay">
+    <div class="lyrics-header">
+      <span class="lyrics-title">{{ playlist.currentTrack().title }}</span>
+      <button class="lyrics-close" (click)="lyrics.close()">×</button>
+    </div>
+    <div class="lyrics-body">
+      @if (lyrics.loading()) {
+        <span class="lyrics-loading">...</span>
+      } @else {
+        <pre class="lyrics-text">{{ lyrics.lyricsText() }}</pre>
+      }
+    </div>
+  </div>
+}

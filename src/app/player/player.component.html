@@ -12,6 +12,13 @@
     <div class="title-btns">
       <button
         class="tbtn"
+        [class.active]="lyrics.showLyrics()"
+        [class.disabled]="!lyrics.hasLyrics()"
+        (click)="lyrics.toggle()"
+        title="Paroles"
+      >♩</button>
+      <button
+        class="tbtn"
         [class.active]="showTracklist()"
         (click)="toggleTracklist()"
         title="Playlist"
@@ -28,6 +35,7 @@
     } @else {
       <app-vinyl-stage />
     }
+    <app-lyrics />
   </div>
 
   <app-track-info />
