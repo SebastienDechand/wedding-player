@@ -66,14 +66,30 @@
 }
 
 .egg-fox {
+  position: absolute;
   width: 20%;
   left: 0%;
   bottom: 28%;
   transform: rotate(-45deg);
   z-index: 1;
+  pointer-events: none;
+}
 
-  &:hover {
+.egg-fox-hitbox {
+  position: absolute;
+  left: -4%;
+  bottom: 18%;
+  width: 34%;
+  aspect-ratio: 1;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 6;
+  transform: rotate(-45deg);
+  touch-action: manipulation;
+
+  &:hover ~ .egg-fox {
     transform: rotate(-45deg) scale(1.12);
+    filter: brightness(1.08);
   }
 }
 

@@ -58,14 +58,6 @@
     },
     {
       "id": 8,
-      "title": "tolerate it",
-      "artist": "Taylor Swift",
-      "url": "audios/tolerate_it_taylor_swift.mp3",
-      "duration": "4:05",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/20/ce/9c/20ce9c97-90e7-a636-4987-c08a40258455/5059962619718_cover.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 9,
       "title": "2:00",
       "artist": "SCH, Damso",
       "url": "audios/2h00_sch_damso.mp3",
@@ -73,15 +65,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/f38a9942047361e6eaeb78ddde0eac0d/300x300-000000-80-0-0.jpg"
     },
     {
-      "id": 10,
-      "title": "Jusqu'au dernier gramme",
-      "artist": "PNL",
-      "url": "audios/jusquau_dernier_gramme_pnl.mp3",
-      "duration": "5:53",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/09/cf/73/09cf7371-d937-8c1e-0739-90e4e8df4d2f/artwork.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 11,
+      "id": 9,
       "title": "We Got the Moves",
       "artist": "Electric Callboy",
       "url": "audios/we_got_the_moves_electric_callboy.mp3",
@@ -89,71 +73,23 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/a0/44/6b/a0446b80-0d5c-789c-772f-b76b457b586e/21UMGIM10468.rgb.jpg/300x300bb.jpg"
     },
     {
-      "id": 12,
+      "id": 10,
       "title": "Dreams",
       "artist": "Fleetwood Mac",
       "url": "audios/dreams_fleetwood_mac.mp3",
-      "duration": "4:14",
+      "duration": "4:18",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d2/48/f4/d248f4ae-a7e4-a48e-1588-6617de3e8d76/mzi.izeorbmm.jpg/300x300bb.jpg"
     },
     {
-      "id": 13,
-      "title": "Je t'aimais, je t'aime, je t'aimerai",
-      "artist": "Francis Cabrel",
-      "url": "audios/je_taimais_je_taime_je_taimerai_francis_cabrel.mp3",
-      "duration": "4:36",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music20/v4/ec/0d/99/ec0d996f-0c45-bc84-6485-5238ae1cd246/dj.ogkgxpzj.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 14,
-      "title": "S.O.S. d'un terrien en détresse",
-      "artist": "Daniel Balavoine",
-      "url": "audios/sos_terrien_en_detresse_daniel_balavoine.mp3",
-      "duration": "3:06",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/8a/11/9f/8a119fd6-a4a9-a895-689d-02038f344169/825646431779.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 15,
-      "title": "Je t'aime",
-      "artist": "Michel Polnareff",
-      "url": "audios/je_taime_michel_polnareff.mp3",
-      "duration": "4:44",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music128/v4/6d/44/5f/6d445fce-8037-48c0-a42c-625c8ca7529d/00731454985420.rgb.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 16,
-      "title": "The Sound of Silence",
-      "artist": "Disturbed",
-      "url": "audios/the_sound_of_silence_disturbed.mp3",
-      "duration": "4:08",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/32/2b/12/322b1228-a133-3317-8d05-742669b700ec/093624926245.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 17,
-      "title": "Wicked Game - Acoustic; Live",
-      "artist": "Stone Sour",
-      "url": "audios/wicked_game_acoustic_live_stone_sour.mp3",
-      "duration": "4:27",
+      "id": 11,
+      "title": "Wicked Game - Cover",
+      "artist": "Alena, Sb.Stein",
+      "url": "audios/wicked_game.mp3",
+      "duration": "3:54",
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music/90/0c/d8/mzi.zhdjujvj.jpg/300x300bb.jpg"
     },
     {
-      "id": 18,
-      "title": "Si jamais j'oublie",
-      "artist": "Zaz",
-      "url": "audios/si_jamais_joublie_zaz.mp3",
-      "duration": "3:29",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music2/v4/9e/80/53/9e805397-df5c-53dd-27ce-a0e66c572f5f/825646021765.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 19,
-      "title": "Secret",
-      "artist": "Louane",
-      "url": "audios/secret_louane.mp3",
-      "duration": "3:11",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music122/v4/ac/3b/1b/ac3b1ba0-f63e-d122-0d8f-9fb541037c3f/22UM1IM14025.rgb.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 20,
+      "id": 12,
       "title": "hot girl bummer",
       "artist": "blackbear",
       "url": "audios/hot_girl_bummer_blackbear.mp3",
@@ -161,7 +97,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/83/fc/17/83fc17c8-c92c-b44e-22e0-de330991c915/602507117108.jpg/300x300bb.jpg"
     },
     {
-      "id": 21,
+      "id": 13,
       "title": "Till It's Gone",
       "artist": "Yelawolf",
       "url": "audios/till_its_gone_yelawolf.mp3",
@@ -169,7 +105,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/cf/4c/b9/cf4cb941-426d-e60f-2470-8a20c7ea42ea/886444749657.jpg/300x300bb.jpg"
     },
     {
-      "id": 22,
+      "id": 14,
       "title": "Kill Our Way to Heaven",
       "artist": "Michl",
       "url": "audios/kill_our_way_to_heaven_michl.mp3",
@@ -177,15 +113,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c5/e5/77/c5e577de-4f97-4a09-9cec-fc102c15ab79/859717873601_cover.jpg/300x300bb.jpg"
     },
     {
-      "id": 23,
-      "title": "Come Join the Murder",
-      "artist": "The White Buffalo",
-      "url": "audios/come_join_the_murder_white_buffalo.mp3",
-      "duration": "7:28",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/ac/41/a6/ac41a692-a434-a4e6-d312-4665163be463/886444977753.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 24,
+      "id": 15,
       "title": "Standstill",
       "artist": "Poets of the Fall",
       "url": "audios/standstill_poets_of_the_fall.mp3",
@@ -193,15 +121,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/d4/bd/7a/d4bd7af3-bae8-6c30-7cfe-6bf20f734878/cover.jpg/300x300bb.jpg"
     },
     {
-      "id": 25,
-      "title": "Hallelujah",
-      "artist": "Theory of a Deadman",
-      "url": "audios/hallelujah_theory_of_a_deadman.mp3",
-      "duration": "4:43",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/fc/69/48/fc694836-fcc5-8a86-99fc-612591955e41/016861343835.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 26,
+      "id": 16,
       "title": "Metalingus",
       "artist": "Alter Bridge",
       "url": "audios/metalingus_alter_bridge.mp3",
@@ -209,7 +129,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2d/27/ee/2d27ee51-35d1-f7c2-26c8-6eca18f7143f/00601501409721.rgb.jpg/300x300bb.jpg"
     },
     {
-      "id": 27,
+      "id": 17,
       "title": "You're a Fucking Bitch Hope You Know That Shit",
       "artist": "Atlus",
       "url": "audios/youre_a_fucking_bitch_atlus.mp3",
@@ -217,7 +137,7 @@
       "cover": "https://cdn-images.dzcdn.net/images/cover/8d0eedb73990cc8d1f7bb7786e7f3d0e/500x500-000000-80-0-0.jpg"
     },
     {
-      "id": 28,
+      "id": 18,
       "title": "Bottom of a Bottle",
       "artist": "Smile Empty Soul",
       "url": "audios/bottom_of_a_bottle_smile_empty_soul.mp3",
@@ -225,7 +145,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/63/37/68/63376847-849c-0861-9c14-4ff19c63180c/859745424462_cover.jpg/300x300bb.jpg"
     },
     {
-      "id": 29,
+      "id": 19,
       "title": "Do I Wanna Know?",
       "artist": "Arctic Monkeys",
       "url": "audios/do_i_wanna_know_arctic_monkeys.mp3",
@@ -233,7 +153,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music113/v4/cc/0f/2d/cc0f2d02-5ff1-10e7-eea2-76863a55dbad/887828031795.png/300x300bb.jpg"
     },
     {
-      "id": 30,
+      "id": 20,
       "title": "Ain't It Fun",
       "artist": "Paramore",
       "url": "audios/aint_it_fun_paramore.mp3",
@@ -241,7 +161,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music112/v4/32/cb/9d/32cb9d04-ef0f-93bb-fd2f-19b395785025/075679956187.jpg/300x300bb.jpg"
     },
     {
-      "id": 31,
+      "id": 21,
       "title": "July",
       "artist": "Noah Cyrus",
       "url": "audios/july_noah_cyrus.mp3",
@@ -249,7 +169,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music123/v4/67/c5/9f/67c59f61-5676-e282-8f86-f8fcebaaa045/886448371564.jpg/300x300bb.jpg"
     },
     {
-      "id": 32,
+      "id": 22,
       "title": "The Sex Is Good",
       "artist": "Saving Abel",
       "url": "audios/the_sex_is_good_saving_abel.mp3",
@@ -257,7 +177,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/48/56/79/48567930-b42c-aa7b-e119-ab5f713ffe8d/05099968460259.rgb.jpg/300x300bb.jpg"
     },
     {
-      "id": 33,
+      "id": 23,
       "title": "Younger Now",
       "artist": "Miley Cyrus",
       "url": "audios/younger_now_miley_cyrus.mp3",
@@ -265,7 +185,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/c3/cc/87/c3cc8787-6535-319e-5cba-bc75bc0b0e6e/886446685601.jpg/300x300bb.jpg"
     },
     {
-      "id": 34,
+      "id": 24,
       "title": "Une seule vie",
       "artist": "Taïro",
       "url": "audios/une_seule_vie_tairo.mp3",
@@ -273,7 +193,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/b6/54/41/b6544176-db9c-e9d0-23d6-f2009900d7fd/3663729168054_cover.jpg/300x300bb.jpg"
     },
     {
-      "id": 35,
+      "id": 25,
       "title": "L'odeur de l'essence",
       "artist": "Orelsan",
       "url": "audios/lodeur_de_lessence_orelsan.mp3",
@@ -281,23 +201,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/ce/1b/fc/ce1bfc78-00af-78ad-8b5b-cf19ff8e604b/3596974065826.jpg/300x300bb.jpg"
     },
     {
-      "id": 36,
-      "title": "Lonely",
-      "artist": "Justin Bieber, benny blanco",
-      "url": "audios/lonely_justin_bieber.mp3",
-      "duration": "2:29",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music114/v4/b9/d9/e1/b9d9e1cf-c187-5d03-a2ca-2565bd4f1e5d/20UMGIM83529.rgb.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 37,
-      "title": "ivy",
-      "artist": "Taylor Swift",
-      "url": "audios/ivy_taylor_swift.mp3",
-      "duration": "4:20",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/82/33/6e/82336ed3-3d1b-e920-b0a7-61775acd0f33/20UM1IM14847.rgb.jpg/300x300bb.jpg"
-    },
-    {
-      "id": 38,
+      "id": 26,
       "title": "I See Fire",
       "artist": "Ed Sheeran",
       "url": "audios/i_see_fire_ed_sheeran.mp3",
@@ -305,7 +209,7 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/0c/05/fd/0c05fd70-986c-a522-1951-69ac18a19734/794043173530.jpg/300x300bb.jpg"
     },
     {
-      "id": 39,
+      "id": 27,
       "title": "Warbringers: Jaina",
       "artist": "Neal Acree, Logan Laflotte",
       "url": "audios/warbringers_jaina.mp3",
@@ -313,12 +217,84 @@
       "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music221/v4/bd/e9/98/bde99861-2fc7-9447-1288-614f7fea354f/047875730588_cover.jpg/300x300bb.jpg"
     },
     {
-      "id": 40,
-      "title": "i love you",
-      "artist": "Billie Eilish",
-      "url": "audios/i_love_you_billie_eilish.mp3",
-      "duration": "4:51",
-      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/1a/37/d1/1a37d1b1-8508-54f2-f541-bf4e437dda76/19UMGIM05028.rgb.jpg/300x300bb.jpg"
+      "id": 28,
+      "title": "yeti",
+      "artist": "Paris Paloma",
+      "url": "audios/yeti_paris_paloma.mp3",
+      "duration": "4:18",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1e/61/cd/1e61cd7e-925f-33cf-5ead-542cda39bf31/067003150750.png/300x300bb.jpg"
+    },
+    {
+      "id": 29,
+      "title": "Tell It to My Heart",
+      "artist": "Paris Paloma",
+      "url": "audios/tell_it_to_my_heart_paris_paloma.mp3",
+      "duration": "2:53",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/96/fc/8f/96fc8fb5-9bb8-cc44-7a69-035b8bbc7f6c/196700890758.png/300x300bb.jpg"
+    },
+    {
+      "id": 30,
+      "title": "It's Called: Freefall",
+      "artist": "Paris Paloma",
+      "url": "audios/its_called_freefall_paris_paloma.mp3",
+      "duration": "2:38",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music116/v4/1e/61/cd/1e61cd7e-925f-33cf-5ead-542cda39bf31/067003150750.png/300x300bb.jpg"
+    },
+    {
+      "id": 31,
+      "title": "One Last Breath",
+      "artist": "Creed",
+      "url": "audios/one_last_breath_creed.mp3",
+      "duration": "3:59",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/2b/d8/ff/2bd8ff78-9201-71dc-c931-503340d8b08a/00601501407529.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 32,
+      "title": "Before Gas And TV",
+      "artist": "Mark Knopfler",
+      "url": "audios/before_gas_and_tv_mark_knopfler.mp3",
+      "duration": "5:50",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/31/15/ee/3115eeb1-d86e-5246-0c6b-ee87a6567b4b/00602527086767.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 33,
+      "title": "Haul Away",
+      "artist": "Mark Knopfler",
+      "url": "audios/haul_away_mark_knopfler.mp3",
+      "duration": "4:01",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music115/v4/79/98/43/79984389-3f4a-0ae9-1a51-4b4442a1761d/00602537144464.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 34,
+      "title": "Angels Fall",
+      "artist": "Breaking Benjamin",
+      "url": "audios/angels_fall_breaking_benjamin.mp3",
+      "duration": "4:07",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/9b/55/88/9b558804-2cf4-e84e-3be7-f3dff7af9899/00050087324896.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 35,
+      "title": "Watch Over You",
+      "artist": "Alter Bridge",
+      "url": "audios/watch_over_you_alter_bridge.mp3",
+      "duration": "4:22",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music125/v4/7e/e5/26/7ee526da-3782-dfe8-9d39-ff0d76945a5e/07UMGIM14158.rgb.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 36,
+      "title": "My Fault",
+      "artist": "Noah Cyrus",
+      "url": "audios/my_fault_noah_cyrus.mp3",
+      "duration": "3:58",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music211/v4/97/b5/bc/97b5bca2-6238-2421-4f0d-1f7a39d5d9d4/197342550925_cover.jpg/300x300bb.jpg"
+    },
+    {
+      "id": 37,
+      "title": "Coney Island",
+      "artist": "Taylor Swift",
+      "url": "audios/coney_island_taylor_swift.mp3",
+      "duration": "4:35",
+      "cover": "https://is1-ssl.mzstatic.com/image/thumb/Music124/v4/bd/dd/54/bddd543b-4e0f-007b-1398-5fef90b963c3/20UM1IM14847.rgb.jpg/300x300bb.jpg"
     }
   ]
 }
